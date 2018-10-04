@@ -1,0 +1,194 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Floor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Walls.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Car.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Traincar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://TrainCar.gd" type="Script" id=5]
+
+[node name="Spatial" type="Spatial" index="0"]
+
+[node name="Map Colliders" type="Spatial" parent="." index="0"]
+
+[node name="Floor" parent="Map Colliders" index="0" instance=ExtResource( 1 )]
+
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Walls" parent="Map Colliders" index="1" instance=ExtResource( 2 )]
+
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -44, 1.5, -0.5 )
+
+[node name="Walls2" parent="Map Colliders" index="2" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 1.5, 0 )
+
+[node name="Walls5" parent="Map Colliders" index="3" instance=ExtResource( 2 )]
+
+transform = Transform( 0.642788, 0, -0.766044, 0, 1, 0, 0.766044, 0, 0.642788, -11, 1.5, -15.5 )
+
+[node name="Walls6" parent="Map Colliders" index="4" instance=ExtResource( 2 )]
+
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -36.5, 1.5, -19 )
+
+[node name="Walls7" parent="Map Colliders" index="5" instance=ExtResource( 2 )]
+
+transform = Transform( 0.642788, 0, -0.766044, 0, 1, 0, 0.766044, 0, 0.642788, -23.5, 1.5, -34 )
+
+[node name="Walls3" parent="Map Colliders" index="6" instance=ExtResource( 2 )]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -6, 1.5, -41 )
+
+[node name="Walls8" parent="Map Colliders" index="7" instance=ExtResource( 2 )]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 14, 1.5, -41 )
+
+[node name="Walls9" parent="Map Colliders" index="8" instance=ExtResource( 2 )]
+
+transform = Transform( 0.819152, 0, 0.573577, 0, 1, 0, -0.573577, 0, 0.819152, 27.5, 1.5, -33.5 )
+
+[node name="Walls10" parent="Map Colliders" index="9" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, 33.5, 1.5, -18 )
+
+[node name="Walls11" parent="Map Colliders" index="10" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, 13.5, 1.5, -1.5 )
+
+[node name="Walls12" parent="Map Colliders" index="11" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, 33.5, 1.5, 2 )
+
+[node name="Walls13" parent="Map Colliders" index="12" instance=ExtResource( 2 )]
+
+transform = Transform( 0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 32, 1.5, 13.5 )
+
+[node name="Walls14" parent="Map Colliders" index="13" instance=ExtResource( 2 )]
+
+transform = Transform( 0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, 24, 1.5, 29 )
+
+[node name="Walls15" parent="Map Colliders" index="14" instance=ExtResource( 2 )]
+
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 11, 1.5, 38.5 )
+
+[node name="Walls16" parent="Map Colliders" index="15" instance=ExtResource( 2 )]
+
+transform = Transform( 0.0871557, 0, -0.996195, 0, 1, 0, 0.996195, 0, 0.0871557, -7, 1.5, 42 )
+
+[node name="Walls17" parent="Map Colliders" index="16" instance=ExtResource( 2 )]
+
+transform = Transform( -0.34202, 0, -0.939692, 0, 1, 0, 0.939692, 0, -0.34202, -23, 1.5, 40.5 )
+
+[node name="Walls18" parent="Map Colliders" index="17" instance=ExtResource( 2 )]
+
+transform = Transform( -0.766044, 0, -0.642787, 0, 1, 0, 0.642787, 0, -0.766044, -38, 1.5, 30 )
+
+[node name="Walls19" parent="Map Colliders" index="18" instance=ExtResource( 2 )]
+
+transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -44, 1.5, 17 )
+
+[node name="Walls4" parent="Map Colliders" index="19" instance=ExtResource( 2 )]
+
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 5, 1.5, -16 )
+
+[node name="Walls20" parent="Map Colliders" index="20" instance=ExtResource( 2 )]
+
+transform = Transform( -0.573577, 0, 0.819152, 0, 1, 0, -0.819152, 0, -0.573577, 5, 1.5, 14 )
+
+[node name="Walls21" parent="Map Colliders" index="21" instance=ExtResource( 2 )]
+
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -11, 1.5, 14.5 )
+
+[node name="Camera" type="Camera" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 1.5, 13, 50 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+
+[node name="Car" parent="." index="2" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0.5, 13.5 )
+
+[node name="PinJoint" type="PinJoint" parent="Car" index="6"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.5 )
+nodes/node_a = NodePath("..")
+nodes/node_b = NodePath("../../Traincar")
+solver/priority = 1
+collision/exclude_nodes = true
+params/bias = 0.3
+params/damping = 1.0
+params/impulse_clamp = 0.0
+_sections_unfolded = [ "nodes" ]
+
+[node name="PinJoint2" type="PinJoint" parent="Car" index="7"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -5 )
+nodes/node_a = NodePath("../../Traincar")
+nodes/node_b = NodePath("../../Traincar2")
+solver/priority = 1
+collision/exclude_nodes = true
+params/bias = 0.3
+params/damping = 1.0
+params/impulse_clamp = 0.0
+_sections_unfolded = [ "nodes" ]
+
+[node name="Traincar" type="VehicleBody" parent="." index="3" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0.5, 10 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 58.6735
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+engine_force = 0.0
+brake = 0.0
+steering = 0.0
+script = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+MAX_ENGINE_FORCE = 150.0
+MAX_BRAKE_FORCE = 5.0
+MAX_STEER_ANGLE = 0.35
+steer_speed = 1.0
+joy_steering = 0
+steering_mult = -1.0
+joy_throttle = 7
+throttle_mult = 1.0
+joy_brake = 6
+brake_mult = 1.0
+
+[node name="Traincar2" parent="." index="4" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0.5, 6.5 )
+
+

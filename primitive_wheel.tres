@@ -1,0 +1,11 @@
+[gd_resource type="CylinderMesh" format=2]
+
+[resource]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+top_radius = 1.0
+bottom_radius = 1.0
+height = 2.0
+radial_segments = 64
+rings = 4
+
