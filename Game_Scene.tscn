@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Walls.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Car.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Traincar.tscn" type="PackedScene" id=4]
-[ext_resource path="res://TrainCar.gd" type="Script" id=5]
 
-[node name="Spatial" type="Spatial" index="0"]
+[node name="Spatial" type="Spatial"]
 
 [node name="Map Colliders" type="Spatial" parent="." index="0"]
 
@@ -143,49 +142,9 @@ params/damping = 1.0
 params/impulse_clamp = 0.0
 _sections_unfolded = [ "nodes" ]
 
-[node name="Traincar" type="VehicleBody" parent="." index="3" instance=ExtResource( 4 )]
+[node name="Traincar" parent="." index="3" instance=ExtResource( 4 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0.5, 10 )
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 58.6735
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = false
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-axis_lock_linear_x = false
-axis_lock_linear_y = false
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-axis_lock_angular_z = false
-linear_velocity = Vector3( 0, 0, 0 )
-linear_damp = -1.0
-angular_velocity = Vector3( 0, 0, 0 )
-angular_damp = -1.0
-engine_force = 0.0
-brake = 0.0
-steering = 0.0
-script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-MAX_ENGINE_FORCE = 150.0
-MAX_BRAKE_FORCE = 5.0
-MAX_STEER_ANGLE = 0.35
-steer_speed = 1.0
-joy_steering = 0
-steering_mult = -1.0
-joy_throttle = 7
-throttle_mult = 1.0
-joy_brake = 6
-brake_mult = 1.0
 
 [node name="Traincar2" parent="." index="4" instance=ExtResource( 4 )]
 
