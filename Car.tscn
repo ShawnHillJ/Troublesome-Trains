@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Car.gd" type="Script" id=1]
 [ext_resource path="res://primitive_wheel.tres" type="CylinderMesh" id=2]
+[ext_resource path="res://Train Models/Industrial.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -193,6 +194,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="body" type="MeshInstance" parent="." index="4"]
 
 transform = Transform( 0.169273, 0, 0, 0, 0.0254, 1.11027e-009, 0, -6.9947e-008, 1.6002, 0.00801266, 0.661194, -0.0124809 )
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -205,9 +207,13 @@ lod_max_hysteresis = 0.0
 mesh = SubResource( 1 )
 skeleton = NodePath("..")
 material/0 = null
-_sections_unfolded = [ "Geometry" ]
+_sections_unfolded = [ "Geometry", "Visibility" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="5"]
+[node name="body2" parent="." index="5" instance=ExtResource( 3 )]
+
+transform = Transform( -0.25, 0, -2.18557e-008, 0, 0.25, 0, 2.18557e-008, 0, -0.25, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="6"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631, 0 )
 shape = SubResource( 2 )

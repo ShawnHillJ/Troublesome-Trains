@@ -5,9 +5,11 @@
 [ext_resource path="res://Car.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Traincar.tscn" type="PackedScene" id=4]
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial" type="Spatial" index="0"]
 
 [node name="Map Colliders" type="Spatial" parent="." index="0"]
+
+editor/display_folded = true
 
 [node name="Floor" parent="Map Colliders" index="0" instance=ExtResource( 1 )]
 
@@ -100,7 +102,7 @@ transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -11, 1.5, 1
 
 [node name="Camera" type="Camera" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 1.5, 13, 50 )
+transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 19.5, 7.5, 30 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
