@@ -66,8 +66,9 @@ func _physics_process(delta):
 		steer_val = -1.0
 	
 	# check if we need to be in reverse
-	if (had_throttle_or_brake_input == false and brake_val > 0.0 and current_speed_mps < 1.0):
-		print("Reversing")
+	# had_throttle_or_brake_input == false and 
+	if (brake_val > 0.0 and current_speed_mps < 1.0):
+		#print("Reversing")
 		had_throttle_or_brake_input = true
 		is_reverse = true
 	elif (throttle_val > 0.0 or brake_val > 0.0):
