@@ -67,7 +67,7 @@ _sections_unfolded = [ "Albedo" ]
 
 radius = 1.0
 
-[node name="Area" type="Area" index="0"]
+[node name="Area" type="Area"]
 
 input_ray_pickable = false
 input_capture_on_drag = false
