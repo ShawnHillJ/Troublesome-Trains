@@ -1,7 +1,8 @@
 extends Spatial
 
+export var RESPAWN_DELAY = 5
+
 var timer = null
-var respawn_delay = 5
 var child_to_respawn = null
 
 func _ready():
@@ -10,7 +11,7 @@ func _ready():
 	
 	timer = Timer.new()
 	timer.set_one_shot(true)
-	timer.set_wait_time(respawn_delay)
+	timer.set_wait_time(RESPAWN_DELAY)
 	timer.connect("timeout", self, "_respawn_object")
 	add_child(timer)
 	
