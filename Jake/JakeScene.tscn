@@ -160,6 +160,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0.5, 6.5 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9774, 0.858479, 22.4188 )
 script = ExtResource( 5 )
+RESPAWN_DELAY = 5
 
 [node name="Box" parent="Spatial" index="0" instance=ExtResource( 6 )]
 
