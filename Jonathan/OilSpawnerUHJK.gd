@@ -10,6 +10,13 @@ var oilcounter = 0.3
 
 func _process(delta):
 	#SPAWN OIL WITH SPACE KEY
+#	var space_state = get_world().direct_space_state
+#	var result = space_state.intersect_ray(
+#												Vector3(get_translation().x, get_translation().y +1, get_translation().z),
+#												Vector3(get_translation().x, get_translation().y - 5, get_translation().z),
+#												[self.name])
+#
+#	set_rotation(result.normal)
 	if Input.is_key_pressed(KEY_SPACE):
 		oilcounter -= delta
 		if (oilcounter <= 0):
@@ -34,7 +41,7 @@ func _physics_process(delta):
 	if Input.is_key_pressed(KEY_J):
 		self.direction.z += 1
 	
-	direction = direction.normalized()			#converts vector into unit vector (all components are 1). Doesn't matter for this example.
+	#direction = direction.normalized()			#converts vector into unit vector (all components are 1). Doesn't matter for this example.
 	direction = direction * speed * delta 		#delta is the time elapsed in seconds between each process call
 												#delta multipliers make direction independent of frame rate
 	velocity.y += gravity * delta
