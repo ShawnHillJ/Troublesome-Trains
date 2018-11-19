@@ -1,0 +1,224 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://TrainCar.gd" type="Script" id=1]
+[ext_resource path="res://primitive_wheel.tres" type="CylinderMesh" id=2]
+[ext_resource path="res://Train Models/Boxcar_Explosive.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CubeMesh" id=1]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 10, 20, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 0.884512, 0.451341, 1.65455 )
+
+[node name="Explosive_Car" type="VehicleBody" index="0"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 58.6735
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+engine_force = 0.0
+brake = 0.0
+steering = 0.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+MAX_ENGINE_FORCE = 150.0
+MAX_BRAKE_FORCE = 5.0
+MAX_STEER_ANGLE = 0.35
+steer_speed = 1.0
+joy_steering = 0
+steering_mult = -1.0
+joy_throttle = 7
+throttle_mult = 1.0
+joy_brake = 6
+brake_mult = 1.0
+
+[node name="right_front" type="VehicleWheel" parent="." index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, -1.31134e-007, 0, 1.31134e-007, 1, -0.856, 0.37, 1.275 )
+use_as_traction = false
+use_as_steering = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.32
+wheel_rest_length = 0.07
+wheel_friction_slip = 10.5
+suspension_travel = 0.05
+suspension_stiffness = 150.0
+suspension_max_force = 2000.0
+damping_compression = 0.8
+damping_relaxation = 0.8
+_sections_unfolded = [ "Damping", "Suspension", "Transform", "Wheel" ]
+
+[node name="right_front" type="MeshInstance" parent="right_front" index="0"]
+
+transform = Transform( -1.11333e-009, 0.03, 0, -0.315353, -1.62362e-008, -4.44368e-007, 3.77268e-008, 1.94239e-015, 0.325747, 0, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="right_rear" type="VehicleWheel" parent="right_front" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.079, -3.57628e-007, -2.53 )
+use_as_traction = true
+use_as_steering = false
+wheel_roll_influence = 0.5
+wheel_radius = 0.32
+wheel_rest_length = 0.07
+wheel_friction_slip = 9.0
+suspension_travel = 0.05
+suspension_stiffness = 130.0
+suspension_max_force = 2000.0
+damping_compression = 0.6
+damping_relaxation = 0.6
+_sections_unfolded = [ "Damping", "Suspension", "Transform", "Wheel" ]
+
+[node name="right_rear" type="MeshInstance" parent="right_front/right_rear" index="0"]
+
+transform = Transform( -1.4179e-008, 0.0254, 1.56318e-022, -0.324377, -1.11027e-009, -1.90659e-008, -2.67528e-008, -9.15689e-017, 0.317033, 0, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="left_rear" type="VehicleWheel" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, -1.31134e-007, 0, 1.31134e-007, 1, 0.935, 0.37, -1.255 )
+use_as_traction = true
+use_as_steering = false
+wheel_roll_influence = 0.5
+wheel_radius = 0.32
+wheel_rest_length = 0.07
+wheel_friction_slip = 9.0
+suspension_travel = 0.05
+suspension_stiffness = 130.0
+suspension_max_force = 2000.0
+damping_compression = 0.6
+damping_relaxation = 0.6
+_sections_unfolded = [ "Damping", "Suspension", "Transform", "Wheel" ]
+
+[node name="left_rear" type="MeshInstance" parent="left_rear" index="0"]
+
+transform = Transform( -1.40528e-009, 0.021, -8.07703e-024, -0.317131, -9.05493e-009, -2.2268e-007, 3.76255e-008, 1.07431e-015, 0.31902, 0, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="left_front" type="VehicleWheel" parent="." index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, -1.31134e-007, 0, 1.31134e-007, 1, 0.856, 0.37, 1.275 )
+use_as_traction = false
+use_as_steering = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.32
+wheel_rest_length = 0.07
+wheel_friction_slip = 10.5
+suspension_travel = 0.05
+suspension_stiffness = 150.0
+suspension_max_force = 2000.0
+damping_compression = 0.8
+damping_relaxation = 0.8
+_sections_unfolded = [ "Damping", "Suspension", "Transform", "Wheel" ]
+
+[node name="left_front" type="MeshInstance" parent="left_front" index="0"]
+
+transform = Transform( -1.36891e-008, 0.0212926, -4.27592e-007, -0.313168, -9.30731e-010, 3.45531e-008, 4.10669e-008, 3.45531e-008, 0.263495, 0, 5.96046e-008, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="body" type="MeshInstance" parent="." index="3"]
+
+transform = Transform( 0.169273, 0, 0, 0, 0.0254, 1.11027e-009, 0, -6.9947e-008, 1.6002, 0.00801266, 0.661194, -0.0124809 )
+visible = false
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Geometry" ]
+
+[node name="Boxcar_Explosive" parent="." index="4" instance=ExtResource( 3 )]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="5"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631, 0 )
+shape = SubResource( 2 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+
