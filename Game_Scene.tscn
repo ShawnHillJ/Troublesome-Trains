@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Walls.tscn" type="PackedScene" id=2]
 [ext_resource path="res://High_Jump Map.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Camera.gd" type="Script" id=4]
 [ext_resource path="res://Car.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Traincar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Test_Raycaster.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Jake/Box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Traincar_Oil.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Traincar_Explosive.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Environment" id=1]
 
@@ -242,9 +244,13 @@ target_height = 4.0
 
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 16, 0.5, 1.5 )
 
-[node name="PinJoint" type="PinJoint" parent="Car" index="6"]
+[node name="Test_Raycaster" parent="Car" index="6" instance=ExtResource( 6 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="PinJoint" type="PinJoint" parent="Car" index="7"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-007, 0.5, -1.5 )
 nodes/node_a = NodePath("..")
 nodes/node_b = NodePath("../../Traincar")
 solver/priority = 1
@@ -252,32 +258,30 @@ collision/exclude_nodes = true
 params/bias = 0.3
 params/damping = 1.0
 params/impulse_clamp = 0.0
-_sections_unfolded = [ "nodes" ]
+_sections_unfolded = [ "collision", "nodes", "params", "solver" ]
 
-[node name="PinJoint2" type="PinJoint" parent="Car" index="7"]
+[node name="PinJoint2" type="PinJoint" parent="Car" index="8"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -5 )
 nodes/node_a = NodePath("../../Traincar")
-nodes/node_b = NodePath("../../Traincar2")
+nodes/node_b = NodePath("../../Explosive_Car")
 solver/priority = 1
 collision/exclude_nodes = true
 params/bias = 0.3
 params/damping = 1.0
 params/impulse_clamp = 0.0
-_sections_unfolded = [ "nodes" ]
+_sections_unfolded = [ "collision", "nodes", "solver" ]
 
-[node name="Traincar" parent="." index="5" instance=ExtResource( 6 )]
-
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 19.5, 0.5, 1.5 )
-script = null
-
-[node name="Traincar2" parent="." index="6" instance=ExtResource( 6 )]
-
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 23, 0.5, 1.5 )
-script = null
-
-[node name="Box" parent="." index="7" instance=ExtResource( 7 )]
+[node name="Box" parent="." index="5" instance=ExtResource( 7 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5, 1, -1 )
+
+[node name="Traincar" parent="." index="6" instance=ExtResource( 8 )]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 20, 0.5, 1.5 )
+
+[node name="Explosive_Car" parent="." index="7" instance=ExtResource( 9 )]
+
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 24, 0.5, 1.5 )
 
 

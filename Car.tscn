@@ -47,8 +47,8 @@ engine_force = 0.0
 brake = 0.0
 steering = 0.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
-MAX_ENGINE_FORCE = 150.0
+_sections_unfolded = [ "Collision", "Transform" ]
+MAX_ENGINE_FORCE = 650.0
 MAX_BRAKE_FORCE = 5.0
 MAX_STEER_ANGLE = 0.35
 steer_speed = 1.0
@@ -78,6 +78,7 @@ _sections_unfolded = [ "Damping", "Suspension", "Transform", "Wheel" ]
 [node name="right_front" type="MeshInstance" parent="right_front" index="0"]
 
 transform = Transform( -1.11333e-009, 0.03, 0, -0.315353, -1.62362e-008, -4.44368e-007, 3.77268e-008, 1.94239e-015, 0.325747, 0, 0, 0 )
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -111,6 +112,7 @@ _sections_unfolded = [ "Damping", "Suspension", "Transform", "Wheel" ]
 [node name="right_rear" type="MeshInstance" parent="right_rear" index="0"]
 
 transform = Transform( -1.4179e-008, 0.0254, 1.56318e-022, -0.324377, -1.11027e-009, -1.90659e-008, -2.67528e-008, -9.15689e-017, 0.317033, 0, 0, 0 )
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -144,6 +146,7 @@ _sections_unfolded = [ "Damping", "Suspension", "Transform", "Wheel" ]
 [node name="left_rear" type="MeshInstance" parent="left_rear" index="0"]
 
 transform = Transform( -1.40528e-009, 0.021, -8.07703e-024, -0.317131, -9.05493e-009, -2.2268e-007, 3.76255e-008, 1.07431e-015, 0.31902, 0, 0, 0 )
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -177,6 +180,7 @@ _sections_unfolded = [ "Damping", "Suspension", "Transform", "Wheel" ]
 [node name="left_front" type="MeshInstance" parent="left_front" index="0"]
 
 transform = Transform( -1.36891e-008, 0.0212926, -4.27592e-007, -0.313168, -9.30731e-010, 3.45531e-008, 4.10669e-008, 3.45531e-008, 0.263495, 0, 5.96046e-008, 0 )
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1

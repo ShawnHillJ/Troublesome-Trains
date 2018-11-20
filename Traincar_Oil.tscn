@@ -2,7 +2,7 @@
 
 [ext_resource path="res://TrainCar.gd" type="Script" id=1]
 [ext_resource path="res://primitive_wheel.tres" type="CylinderMesh" id=2]
-[ext_resource path="res://Train Models/Boxcar_Explosive.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Oilcar.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -16,7 +16,7 @@ subdivide_depth = 0
 
 extents = Vector3( 0.884512, 0.451341, 1.65455 )
 
-[node name="Explosive_Car" type="VehicleBody"]
+[node name="Traincar" type="VehicleBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -213,10 +213,9 @@ skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Geometry" ]
 
-[node name="Boxcar_Explosive" parent="." index="5" instance=ExtResource( 3 )]
+[node name="Scene Root" parent="." index="5" instance=ExtResource( 3 )]
 
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0, 0, 0 )
-_sections_unfolded = [ "Transform" ]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="6"]
 
