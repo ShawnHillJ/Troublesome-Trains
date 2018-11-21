@@ -4,19 +4,23 @@ var speed = 200
 var direction = Vector3()
 var gravity = -10
 var velocity = Vector3()
+var OilNormal = Vector3(0,0,0)
 
 onready var OilAsset = preload("res://Jonathan/OilSlick.tscn") #change path in final product?
 var oilcounter = 0.3
 
-func _process(delta):
-	#SPAWN OIL WITH SPACE KEY
-#	var space_state = get_world().direct_space_state
-#	var result = space_state.intersect_ray(
-#												Vector3(get_translation().x, get_translation().y +1, get_translation().z),
-#												Vector3(get_translation().x, get_translation().y - 5, get_translation().z),
-#												[self.name])
+#func _ready():
+#	$NormalCheck.add_exception(self)
 #
-#	set_rotation(result.normal)
+#
+#
+func _process(delta):
+#	if Input.is_key_pressed(KEY_SPACE):
+#		print($NormalCheck.get_collider())
+#		print($NormalCheck.get_collision_normal())
+#
+#	OilNormal = $NormalCheck.get_collision_normal()
+	
 	if Input.is_key_pressed(KEY_SPACE):
 		oilcounter -= delta
 		if (oilcounter <= 0):
@@ -26,7 +30,7 @@ func _process(delta):
 			get_tree().get_root().add_child(Oil)
 			#Oil.set_transform(get_transform())
 			Oil.set_translation(Vector3(get_translation().x, get_translation().y - 1.5, get_translation().z))
-			Oil.set_rotation((Vector3(0, 0, 0)))
+			Oil.set_rotation(OilNormal)
 			print("OIL SPAWNED")
 
 func _physics_process(delta):
@@ -47,5 +51,5 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	velocity.x = direction.x
 	velocity.z = direction.z
-	
+
 	velocity = move_and_slide(velocity, Vector3(0,1,0))

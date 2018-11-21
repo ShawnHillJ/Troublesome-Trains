@@ -14,12 +14,13 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Walls" parent="Spatial" index="5" instance=ExtResource( 2 )]
 
-transform = Transform( -3.05823e-007, 0.5, 0.866026, -1.5115e-007, 0.866026, -0.5, -5, -5.67623e-008, -3.78552e-008, 2.42053, 2.65143, 32.0434 )
+transform = Transform( -2.18557e-007, 0.5, 0.866026, 0, 0.866026, -0.5, -5, -2.18557e-008, -3.78552e-008, 2.42053, 2.65143, 32.0434 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="OilSpawnerUHJK" parent="." index="1" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 15.7967, 2.17612, 14.359 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 15.7967, 2.90701, 14.359 )
+collision_layer = 1
 script = ExtResource( 4 )
 
 [node name="Checkpoint" parent="." index="2" instance=ExtResource( 5 )]
