@@ -5,7 +5,7 @@ extends VehicleBody
 ############################################################
 # Behaviour values
 
-export var MAX_ENGINE_FORCE = 150.0
+export var MAX_ENGINE_FORCE = 650.0
 export var MAX_BRAKE_FORCE = 10.0
 export var MAX_STEER_ANGLE = 0.35
 
@@ -16,6 +16,8 @@ var steer_angle = 0.0
 
 ############################################################
 # Speed and drive direction
+
+onready var rot = rotation
 
 var current_speed_mps = 0.0
 var had_throttle_or_brake_input = false
@@ -66,8 +68,9 @@ func _physics_process(delta):
 		steer_val = -1.0
 	
 	# check if we need to be in reverse
-	if (had_throttle_or_brake_input == false and brake_val > 0.0 and current_speed_mps < 1.0):
-		print("Reversing")
+	# had_throttle_or_brake_input == false and 
+	if (brake_val > 0.0 and current_speed_mps < 1.0):
+		#print("Reversing")
 		had_throttle_or_brake_input = true
 		is_reverse = true
 	elif (throttle_val > 0.0 or brake_val > 0.0):

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Maps/High_Jump.dae" type="PackedScene" id=1]
+
+[node name="Spatial" type="Spatial" index="0"]
+
+[node name="Map" parent="." index="0" instance=ExtResource( 1 )]
+
+_sections_unfolded = [ "Transform" ]
+
+
