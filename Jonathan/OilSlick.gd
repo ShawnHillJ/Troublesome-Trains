@@ -6,6 +6,7 @@ var velocity = Vector3()
 var base = 1 			#base scale
 var growth = 0.7		#growth multiplier
 
+
 func _process(delta):
 	if (lifetime > 12):
 		var size = base + (15-lifetime)*growth
@@ -18,6 +19,7 @@ func _process(delta):
 		print("OIL DESPAWNED")
 		
 #DEBUG CHECK FOR TRAIN
-func _on_OilSlick_body_entered(body):
-	if body is VehicleWheel:
-		print("HONK")
+#func _on_OilSlick_body_entered(body):
+#	if body is VehicleWheel:
+#		print("HONK")
+	
