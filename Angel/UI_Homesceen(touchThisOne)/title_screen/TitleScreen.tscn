@@ -5,7 +5,7 @@
 [ext_resource path="res://title_screen/buttons/NewGameButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://title_screen/buttons/ContinueButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://title_screen/buttons/OptionsButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://title_screen/thomasTheDankEngine.png" type="Texture" id=6]
+[ext_resource path="res://thomasTheDankEngineNew.png" type="Texture" id=6]
 [ext_resource path="res://title_screen/fonts/montserrat_24.tres" type="DynamicFont" id=7]
 [ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=8]
 
@@ -67,7 +67,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 254.0
 margin_right = 1040.0
-margin_bottom = 474.0
+margin_bottom = 510.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -84,7 +84,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 518.0
-margin_bottom = 220.0
+margin_bottom = 256.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -96,21 +96,22 @@ alignment = 1
 
 [node name="NewGameButton" parent="Menu/CenterRow/Buttons" index="0" instance=ExtResource( 3 )]
 
+margin_top = 18.0
 margin_right = 518.0
-margin_bottom = 60.0
+margin_bottom = 78.0
 _sections_unfolded = [ "Pause", "Rect" ]
 
 [node name="ContinueButton" parent="Menu/CenterRow/Buttons" index="1" instance=ExtResource( 4 )]
 
-margin_top = 80.0
+margin_top = 98.0
 margin_right = 518.0
-margin_bottom = 140.0
+margin_bottom = 158.0
 
 [node name="OptionsButton" parent="Menu/CenterRow/Buttons" index="2" instance=ExtResource( 5 )]
 
-margin_top = 160.0
+margin_top = 178.0
 margin_right = 518.0
-margin_bottom = 220.0
+margin_bottom = 238.0
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow" index="1"]
 
@@ -120,7 +121,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 522.0
 margin_right = 1040.0
-margin_bottom = 220.0
+margin_bottom = 256.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -136,10 +137,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 102.0
-margin_top = 49.0
-margin_right = 357.0
-margin_bottom = 273.0
+margin_left = 131.0
+margin_right = 387.0
+margin_bottom = 256.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -147,7 +147,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 6 )
-expand = true
 stretch_mode = 0
 
 [node name="VersionLabel" type="Label" parent="Menu" index="2"]
@@ -156,9 +155,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 478.0
+margin_top = 514.0
 margin_right = 1040.0
-margin_bottom = 577.0
+margin_bottom = 613.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
