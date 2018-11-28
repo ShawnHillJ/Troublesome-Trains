@@ -16,7 +16,7 @@ subdivide_depth = 0
 
 extents = Vector3( 0.884512, 0.451341, 1.65455 )
 
-[node name="Car" type="VehicleBody" index="0"]
+[node name="Car" type="VehicleBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
