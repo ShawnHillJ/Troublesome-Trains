@@ -5,11 +5,11 @@ extends VehicleBody
 ############################################################
 # Behaviour values
 
-export var MAX_ENGINE_FORCE = 650.0
+export var MAX_ENGINE_FORCE = 200.0
 export var MAX_BRAKE_FORCE = 10.0
 export var MAX_STEER_ANGLE = 0.35
 
-export var steer_speed = 1.0
+export var steer_speed = 0.5
 
 var steer_target = 0.0
 var steer_angle = 0.0

@@ -18,7 +18,7 @@ viewport_path = NodePath("Viewport")
 
 resource_local_to_scene = true
 flags = 0
-viewport_path = NodePath("Viewport2")
+viewport_path = NodePath("/root/EditorNode/@@5/@@6/@@14/@@16/@@20/@@24/@@25/@@26/@@42/@@43/@@50/@@51/@@6457/@@6323/@@6324/@@6325/@@6326/@@6327/@@6328/Spatial/Viewport2")
 
 [sub_resource type="ViewportTexture" id=3]
 
@@ -26,7 +26,7 @@ resource_local_to_scene = true
 flags = 0
 viewport_path = NodePath("Viewport3")
 
-[node name="Spatial" type="Spatial" index="0"]
+[node name="Spatial" type="Spatial"]
 
 [node name="Map Colliders" type="Spatial" parent="." index="0"]
 
@@ -188,7 +188,6 @@ _sections_unfolded = [ "Reverb Bus", "Transform", "Visibility" ]
 
 [node name="UI" type="Control" parent="." index="6"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -266,7 +265,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Viewport2" type="Viewport" parent="." index="8"]
 
-editor/display_folded = true
 arvr = false
 size = Vector2( 512, 300 )
 own_world = false

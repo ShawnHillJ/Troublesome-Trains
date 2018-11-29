@@ -4,21 +4,21 @@
 
 resource_local_to_scene = true
 flags = 0
-viewport_path = NodePath("Viewport")
+viewport_path = NodePath("UI/Viewport")
 
 [sub_resource type="ViewportTexture" id=2]
 
 resource_local_to_scene = true
 flags = 0
-viewport_path = NodePath("Viewport2")
+viewport_path = NodePath("UI/Viewport2")
 
 [sub_resource type="ViewportTexture" id=3]
 
 resource_local_to_scene = true
 flags = 0
-viewport_path = NodePath("Viewport3")
+viewport_path = NodePath("UI/Viewport3")
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial" type="Spatial" index="0"]
 
 [node name="UI" type="Control" parent="." index="0"]
 
@@ -35,27 +35,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Sprite" type="Sprite" parent="UI" index="0"]
-
-position = Vector2( 256, 151 )
-texture = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite2" type="Sprite" parent="UI" index="1"]
-
-visible = false
-position = Vector2( 768, 150 )
-texture = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite3" type="Sprite" parent="UI" index="2"]
-
-visible = false
-position = Vector2( 512, 450 )
-texture = SubResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Viewport" type="Viewport" parent="." index="1"]
+[node name="Viewport" type="Viewport" parent="UI" index="0"]
 
 arvr = false
 size = Vector2( 512, 300 )
@@ -82,7 +62,7 @@ shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
 _sections_unfolded = [ "Render Target" ]
 
-[node name="Camera" type="Camera" parent="Viewport" index="0"]
+[node name="Camera" type="Camera" parent="UI/Viewport" index="0"]
 
 transform = Transform( 0.426032, -0.0786932, 0.901279, 0.0315615, 0.996896, 0.0721228, -0.904158, -0.00228077, 0.427193, 24.4645, 1.41233, 14.5446 )
 keep_aspect = 1
@@ -99,7 +79,7 @@ near = 0.05
 far = 100.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="Viewport2" type="Viewport" parent="." index="2"]
+[node name="Viewport2" type="Viewport" parent="UI" index="1"]
 
 arvr = false
 size = Vector2( 512, 300 )
@@ -126,7 +106,7 @@ shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
 _sections_unfolded = [ "Render Target" ]
 
-[node name="Camera" type="Camera" parent="Viewport2" index="0"]
+[node name="Camera" type="Camera" parent="UI/Viewport2" index="0"]
 
 transform = Transform( -0.986867, -0.0163032, 0.16071, 0.0764997, 0.829085, 0.553865, -0.142272, 0.558886, -0.816949, 19.0673, 5.10022, 0 )
 visible = false
@@ -143,7 +123,7 @@ size = 1.0
 near = 0.05
 far = 100.0
 
-[node name="Viewport3" type="Viewport" parent="." index="3"]
+[node name="Viewport3" type="Viewport" parent="UI" index="2"]
 
 arvr = false
 size = Vector2( 1024, 300 )
@@ -170,7 +150,7 @@ shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
 _sections_unfolded = [ "Render Target" ]
 
-[node name="Camera" type="Camera" parent="Viewport3" index="0"]
+[node name="Camera" type="Camera" parent="UI/Viewport3" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 1.5, 13, 50 )
 visible = false
@@ -186,5 +166,23 @@ fov = 70.0
 size = 1.0
 near = 0.05
 far = 100.0
+
+[node name="Sprite" type="Sprite" parent="UI" index="3"]
+
+position = Vector2( 256, 151 )
+texture = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="UI" index="4"]
+
+position = Vector2( 768, 150 )
+texture = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite3" type="Sprite" parent="UI" index="5"]
+
+position = Vector2( 512, 450 )
+texture = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 
