@@ -7,42 +7,52 @@ var velocity = Vector3()
 var OilNormal = Vector3(0,0,0)
 
 onready var OilAsset = preload("res://Jonathan/OilSlick.tscn") #change path in final product?
+onready var OilBlobAsset = preload("res://Jonathan/OilBlob.tscn") #change path in final product?
+
 var oilcounter = 0.3
 
-#func _ready():
-#	$NormalCheck.add_exception(self)
-#
-#
 #
 func _process(delta):
-#	if Input.is_key_pressed(KEY_SPACE):
-#		print($NormalCheck.get_collider())
-#		print($NormalCheck.get_collision_normal())
-#
-#	OilNormal = $NormalCheck.get_collision_normal()
+
+	OilNormal = $NormalCheck.get_collision_normal()
 	
 	if Input.is_key_pressed(KEY_SPACE):
 		oilcounter -= delta
 		if (oilcounter <= 0):
 			oilcounter = 0.3
 			var Oil = OilAsset.instance()
-			#var MyPosition = Vector3(self.x, self.y, self.z)
 			get_tree().get_root().add_child(Oil)
-			#Oil.set_transform(get_transform())
 			Oil.set_translation(Vector3(get_translation().x, get_translation().y - 1.5, get_translation().z))
-			Oil.set_rotation(OilNormal)
+			
+			Oil.transform.basis = Basis(OilNormal)
+
+			print($NormalCheck.get_collision_normal())
 			print("OIL SPAWNED")
+			
+	if Input.is_key_pressed(KEY_B):
+		oilcounter -= delta
+		if (oilcounter <= 0):
+			oilcounter = 0.3
+			var OilBlob = OilBlobAsset.instance()
+			get_tree().get_root().add_child(OilBlob)
+			OilBlob.set_translation(Vector3(get_translation().x, get_translation().y, get_translation().z));
+			OilBlob.velocity.y = 3;
+			#OilBlob.transform.basis = Basis(Vector3(OilNormal.x , OilNormal.y * 2, OilNormal.z ))
+			
+			print("BLOB")
+		
+		
 
 func _physics_process(delta):
 	#MOVEMENT
 	direction = Vector3(0,0,0)
-	if Input.is_key_pressed(KEY_H):
-		self.direction.x -= 1
-	if Input.is_key_pressed(KEY_K):
-		self.direction.x += 1
 	if Input.is_key_pressed(KEY_U):
-		self.direction.z -= 1
+		self.direction.x -= 1
 	if Input.is_key_pressed(KEY_J):
+		self.direction.x += 1
+	if Input.is_key_pressed(KEY_K):
+		self.direction.z -= 1
+	if Input.is_key_pressed(KEY_H):
 		self.direction.z += 1
 	
 	#direction = direction.normalized()			#converts vector into unit vector (all components are 1). Doesn't matter for this example.
