@@ -7,11 +7,14 @@ extends Spatial
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	var cameraSetup = get_node("CameraSetup")
-	var firstViewport = cameraSetup.get_child(1)
+	#var cameraSetup = get_node("CameraSetup").get_child(0)
+	#var firstViewport  = cameraSetup.get_child(4)
+	#var secondViewport = cameraSetup.get_child(5)
+	#var thirdViewport  = cameraSetup.get_child(6)
+	#var fourthViewport = cameraSetup.get_child(7)
 	
-	firstViewport.size.x = 1920
-	firstViewport.size.y = 1080
+	#firstViewport.size.x = 1920
+	#firstViewport.size.y = 1080
 	
 	pass
 

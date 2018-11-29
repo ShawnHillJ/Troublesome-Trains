@@ -1,9 +1,10 @@
 extends VehicleBody
 
-#DEMO SCRIPT - TOTAL REWRITE REQUIRED
 
 ############################################################
 # Behaviour values
+
+onready var animator = get_node("body2/AnimationPlayer")
 
 export var MAX_ENGINE_FORCE = 200.0
 export var MAX_BRAKE_FORCE = 10.0
@@ -45,6 +46,13 @@ func _ready():
 func _physics_process(delta):
 	# how fast are we going in meters per second?
 	current_speed_mps = (translation - last_pos).length() / delta
+	if is_reverse:
+		current_speed_mps = current_speed_mps * -1
+	
+	if not animator.is_playing():
+		animator.play("default")
+	animator.playback_speed = current_speed_mps / 10
+	print(current_speed_mps)
 	
 	# get our joystick inputs
 	var steer_val = steering_mult * Input.get_joy_axis(0, joy_steering)

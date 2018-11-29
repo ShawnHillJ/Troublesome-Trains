@@ -14,7 +14,7 @@ subdivide_depth = 0
 
 [sub_resource type="BoxShape" id=2]
 
-extents = Vector3( 0.884512, 0.451341, 1.65455 )
+extents = Vector3( 0.761424, 0.451341, 1.65455 )
 
 [node name="Car" type="VehicleBody"]
 
@@ -219,7 +219,7 @@ transform = Transform( -0.25, 0, -2.18557e-008, 0, 0.25, 0, 2.18557e-008, 0, -0.
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="6"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631, 0 )
+transform = Transform( 1, 0, 0, 0, 1.93489, 0, 0, 0, 1.2075, 0, 1.131, 0 )
 shape = SubResource( 2 )
 disabled = false
 _sections_unfolded = [ "Transform" ]

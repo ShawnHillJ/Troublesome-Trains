@@ -8,10 +8,13 @@ var follow_this = null
 var last_lookat
 
 func _ready():
-	follow_this = get_node(follow_this_path)
-	last_lookat = follow_this.global_transform.origin
+	if follow_this_path != null:
+		follow_this = get_node(follow_this_path)
+		last_lookat = follow_this.global_transform.origin
 
 func _physics_process(delta):
+	if not follow_this:
+		return
 	var delta_v = global_transform.origin - follow_this.global_transform.origin
 	var target_pos = global_transform.origin
 	
@@ -30,3 +33,6 @@ func _physics_process(delta):
 	last_lookat = last_lookat.linear_interpolate(follow_this.global_transform.origin, delta * 20.0)
 	
 	look_at(last_lookat, Vector3(0.0, 1.0, 0.0))
+	
+func set_path(_node):
+	follow_this = get_node(_node)
