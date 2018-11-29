@@ -1,0 +1,190 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="ViewportTexture" id=1]
+
+resource_local_to_scene = true
+flags = 0
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="ViewportTexture" id=2]
+
+resource_local_to_scene = true
+flags = 0
+viewport_path = NodePath("Viewport2")
+
+[sub_resource type="ViewportTexture" id=3]
+
+resource_local_to_scene = true
+flags = 0
+viewport_path = NodePath("Viewport3")
+
+[node name="Spatial" type="Spatial"]
+
+[node name="UI" type="Control" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Sprite" type="Sprite" parent="UI" index="0"]
+
+position = Vector2( 256, 151 )
+texture = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="UI" index="1"]
+
+visible = false
+position = Vector2( 768, 150 )
+texture = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite3" type="Sprite" parent="UI" index="2"]
+
+visible = false
+position = Vector2( 512, 450 )
+texture = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Viewport" type="Viewport" parent="." index="1"]
+
+arvr = false
+size = Vector2( 512, 300 )
+own_world = false
+world = null
+transparent_bg = false
+msaa = 0
+hdr = true
+disable_3d = false
+usage = 2
+debug_draw = 0
+render_target_v_flip = true
+render_target_clear_mode = 0
+render_target_update_mode = 2
+audio_listener_enable_2d = false
+audio_listener_enable_3d = false
+physics_object_picking = false
+gui_disable_input = false
+gui_snap_controls_to_pixels = true
+shadow_atlas_size = 0
+shadow_atlas_quad_0 = 2
+shadow_atlas_quad_1 = 2
+shadow_atlas_quad_2 = 3
+shadow_atlas_quad_3 = 4
+_sections_unfolded = [ "Render Target" ]
+
+[node name="Camera" type="Camera" parent="Viewport" index="0"]
+
+transform = Transform( 0.426032, -0.0786932, 0.901279, 0.0315615, 0.996896, 0.0721228, -0.904158, -0.00228077, 0.427193, 24.4645, 1.41233, 14.5446 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = true
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Viewport2" type="Viewport" parent="." index="2"]
+
+arvr = false
+size = Vector2( 512, 300 )
+own_world = false
+world = null
+transparent_bg = false
+msaa = 0
+hdr = true
+disable_3d = false
+usage = 2
+debug_draw = 0
+render_target_v_flip = true
+render_target_clear_mode = 0
+render_target_update_mode = 2
+audio_listener_enable_2d = false
+audio_listener_enable_3d = false
+physics_object_picking = false
+gui_disable_input = false
+gui_snap_controls_to_pixels = true
+shadow_atlas_size = 0
+shadow_atlas_quad_0 = 2
+shadow_atlas_quad_1 = 2
+shadow_atlas_quad_2 = 3
+shadow_atlas_quad_3 = 4
+_sections_unfolded = [ "Render Target" ]
+
+[node name="Camera" type="Camera" parent="Viewport2" index="0"]
+
+transform = Transform( -0.986867, -0.0163032, 0.16071, 0.0764997, 0.829085, 0.553865, -0.142272, 0.558886, -0.816949, 19.0673, 5.10022, 0 )
+visible = false
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = true
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+
+[node name="Viewport3" type="Viewport" parent="." index="3"]
+
+arvr = false
+size = Vector2( 1024, 300 )
+own_world = false
+world = null
+transparent_bg = false
+msaa = 0
+hdr = true
+disable_3d = false
+usage = 2
+debug_draw = 0
+render_target_v_flip = true
+render_target_clear_mode = 0
+render_target_update_mode = 2
+audio_listener_enable_2d = false
+audio_listener_enable_3d = false
+physics_object_picking = false
+gui_disable_input = false
+gui_snap_controls_to_pixels = true
+shadow_atlas_size = 0
+shadow_atlas_quad_0 = 2
+shadow_atlas_quad_1 = 2
+shadow_atlas_quad_2 = 3
+shadow_atlas_quad_3 = 4
+_sections_unfolded = [ "Render Target" ]
+
+[node name="Camera" type="Camera" parent="Viewport3" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 1.5, 13, 50 )
+visible = false
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = true
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+
+
