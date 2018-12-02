@@ -12,7 +12,7 @@
 [ext_resource path="res://Traincar_Oil.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Traincar_Explosive.tscn" type="PackedScene" id=11]
 
-[sub_resource type="Environment" id=4]
+[sub_resource type="Environment" id=1]
 
 background_mode = 0
 background_sky_custom_fov = 0.0
@@ -90,7 +90,7 @@ adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
@@ -100,7 +100,7 @@ transform = Transform( -4.37114e-008, -0.422618, 0.906308, 0, 0.906308, 0.422618
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 
-environment = SubResource( 4 )
+environment = SubResource( 1 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment" index="0"]
 
