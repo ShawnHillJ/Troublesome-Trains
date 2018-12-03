@@ -10,8 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Title Screen Start"
-run/main_scene="res://title_screen/TitleScreen.tscn"
+config/name="Design a main menu screen (start)"
 config/icon="res://icon.png"
 
 [display]
@@ -19,7 +18,10 @@ config/icon="res://icon.png"
 window/size/width=1280
 window/size/height=720
 
+[gdnative]
+
+singletons=[  ]
+
 [rendering]
 
 environment/default_clear_color=Color( 0.14902, 0.192157, 0.219608, 1 )
-environment/default_environment="res://default_env.tres"
