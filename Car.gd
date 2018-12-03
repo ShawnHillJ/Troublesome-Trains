@@ -52,7 +52,7 @@ func _physics_process(delta):
 	if not animator.is_playing():
 		animator.play("default")
 	animator.playback_speed = current_speed_mps / 10
-	print(current_speed_mps)
+	#print(current_speed_mps)
 	
 	# get our joystick inputs
 	var steer_val = steering_mult * Input.get_joy_axis(0, joy_steering)

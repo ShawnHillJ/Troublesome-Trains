@@ -17,7 +17,7 @@ func _process(delta):
 	if (lifetime <= 0):
 
 		queue_free()
-		print("OIL DESPAWNED")
+		#print("OIL DESPAWNED")
 
 	
 ##DEBUG CHECK FOR TRAIN
