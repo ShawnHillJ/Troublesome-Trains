@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/209972_jrosin_wales-steam-train (online-audio-converter.com).wav-401104886b00a2a33dbe891b3f96b539.sample"
+
+[deps]
+
+source_file="res://Audio/209972_jrosin_wales-steam-train (online-audio-converter.com).wav"
+dest_files=[ "res://.import/209972_jrosin_wales-steam-train (online-audio-converter.com).wav-401104886b00a2a33dbe891b3f96b539.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

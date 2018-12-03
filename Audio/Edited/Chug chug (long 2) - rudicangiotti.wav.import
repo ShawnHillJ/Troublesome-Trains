@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Chug chug (long 2) - rudicangiotti.wav-899e59bf1cd090f41b407e44232a236b.sample"
+
+[deps]
+
+source_file="res://Audio/Edited/Chug chug (long 2) - rudicangiotti.wav"
+dest_files=[ "res://.import/Chug chug (long 2) - rudicangiotti.wav-899e59bf1cd090f41b407e44232a236b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

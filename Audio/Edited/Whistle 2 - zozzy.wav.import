@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Whistle 2 - zozzy.wav-38a9500cde95c22aed06a51f96138a64.sample"
+
+[deps]
+
+source_file="res://Audio/Edited/Whistle 2 - zozzy.wav"
+dest_files=[ "res://.import/Whistle 2 - zozzy.wav-38a9500cde95c22aed06a51f96138a64.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

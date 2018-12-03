@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Ding 2 - suzenako.wav-100378aff4dc0740a50bfdcf5cc6ed2c.sample"
+
+[deps]
+
+source_file="res://Audio/Edited/Ding 2 - suzenako.wav"
+dest_files=[ "res://.import/Ding 2 - suzenako.wav-100378aff4dc0740a50bfdcf5cc6ed2c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

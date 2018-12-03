@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Chug chug (normal) - benboncan.wav-4a66a0651e89c8f2151c77694a77b117.sample"
+
+[deps]
+
+source_file="res://Audio/Edited/Chug chug (normal) - benboncan.wav"
+dest_files=[ "res://.import/Chug chug (normal) - benboncan.wav-4a66a0651e89c8f2151c77694a77b117.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

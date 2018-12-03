@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Crash 1 - adbicycle.wav-af2657afd0a3fc5817d96ef368aeb3f5.sample"
+
+[deps]
+
+source_file="res://Audio/Edited/Crash 1 - adbicycle.wav"
+dest_files=[ "res://.import/Crash 1 - adbicycle.wav-af2657afd0a3fc5817d96ef368aeb3f5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

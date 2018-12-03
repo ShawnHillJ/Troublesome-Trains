@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/94216__benboncan__steam-train-1.wav-02a100517a3a3ce6478130c7b87053f6.sample"
+
+[deps]
+
+source_file="res://Audio/94216__benboncan__steam-train-1.wav"
+dest_files=[ "res://.import/94216__benboncan__steam-train-1.wav-02a100517a3a3ce6478130c7b87053f6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
