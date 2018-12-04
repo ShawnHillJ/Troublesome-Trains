@@ -11,6 +11,8 @@ onready var camera = get_node("")
 onready var powerup_handler = get_node("Powerup_Node")
 onready var joints = get_node("Joints")
 onready var UIpath = get_node("")
+onready var powerup_manager = get_node("PowerUpManager")
+var player_num = 2
 
 #Powerup Effects
 var is_sliding = false
@@ -30,6 +32,12 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+func control_handler(action):
+	if player_num == 1:
+		return Input.is_action_pressed(action)
+	else:
+		return Input.is_action_pressed(action + String(player_num))
+
 
 func apply_explosion(vec):
 	velocity = velocity + vec
@@ -41,9 +49,9 @@ func _physics_process(delta):
 	var direction = Vector3()
 	var rotation = get_rotation()
 	
-	if Input.is_action_pressed("Forward"):
+	if control_handler("Forward"):
 		direction += -basis[2]
-	elif Input.is_action_pressed("Backward"):
+	elif control_handler("Backward"):
 		direction += basis[2]
 		
 	#direction = direction.normalized()
@@ -56,14 +64,14 @@ func _physics_process(delta):
 	hv.y = 0
 	
 	var new_pos = direction * SPEED
-	if not Input.is_action_pressed("Drift") or not is_sliding:
+	if not control_handler("Drift") or not is_sliding:
 		new_pos *= 0.5
 		
 	var accel = DE_ACCELERATION
 	if (direction.dot(hv) > 0):
 		accel = ACCELERATION
 	if is_on_floor():
-		if Input.is_action_pressed("Drift"):
+		if control_handler("Drift"):
 		    hv = hv.linear_interpolate(new_pos, accel * delta)
 		else:
 			hv = hv.linear_interpolate(new_pos, accel * 5 * delta)
@@ -73,15 +81,19 @@ func _physics_process(delta):
 		
 	# Steering
 	if  velocity.length() > 0.3:
-		if Input.is_action_pressed("Left"):
+		if control_handler("Left"):
 			steering_angle = lerp(steering_angle, ramp(rad2deg(steering_angle), false) * deg2rad(1), 5 * delta)
 			rotation.y += steering_angle
-		elif Input.is_action_pressed("Right"):
+		elif control_handler("Right"):
 			steering_angle = lerp(steering_angle, ramp(rad2deg(steering_angle), true) * deg2rad(-1), 5 * delta)
 			rotation.y += steering_angle
 		else:
 			steering_angle = lerp(steering_angle, 0, 10 * delta)
 			rotation.y += steering_angle
+			
+	# Powerup
+	if control_handler("Powerup"):
+		powerup_manager.UsePowerUp()
 	
 #	print("steering_angle:", steering_angle)
 #	print("Is on ground", is_on_floor())
@@ -102,3 +114,6 @@ func ramp(val, ramp_direction): #ramps the value to a specified number
 	
 func hit_pickup():
 	powerup_handler.add_powerup()
+	
+func set_player_num(num):
+	player_num = num

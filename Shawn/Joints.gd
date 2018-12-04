@@ -9,6 +9,7 @@ var items = 0
 var explosive_car = load("res://Traincar_Explosive.tscn")
 var oil_car = load("res://Oilcar.tscn")
 var cars = [oil_car, explosive_car]
+var powerups = []
 
 onready var joint1 = get_node("Joint1")
 onready var outer_parent = get_node("../")
@@ -16,23 +17,28 @@ onready var outer_parent = get_node("../")
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	for x in range(6):
-		joints.append(get_node("Joint" + String(x + 1)))
-		
-	joint1.nodes.node_a = self
+	joint1.set_node_a(get_path())
 
 
 func add_powerup(type):
-	var current_joint = joints[items]
-	current_joint.joints
-	
-	if current_joint != joint1:
-		current_joint.nodes.node_a = joints[items - 1].nodes.node_b
+	var current_joint = joint1
+	if items != 0:
+		current_joint = joints[items - 1]
 		
-	var new_car_instance = cars[type]
+	var new_car_instance = cars[type].instance()
+	var newname = "powerup" + String(items)
+	new_car_instance.set_name(newname)
+	add_child_below_node(new_car_instance, outer_parent)
+	var new_car_path = get_node("../../../" + newname)
 	
-	add_child_below_node(new_car_instance, outer_parent, true)
-	var new_car = get_node("../../../" + newname)
+	if current_joint == joint1:
+		current_joint.set_node_a()
+		return
+		
+		
+		
+	
+	
 	current_joint.nodes.node_b = new_car_path
 	
 

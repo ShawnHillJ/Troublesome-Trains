@@ -1,12 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Game_Scene.gd" type="Script" id=1]
 [ext_resource path="res://High_Jump Map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Jake/CameraSetup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Walls.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Camera.gd" type="Script" id=6]
-[ext_resource path="res://Jake/Box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Jake/Box.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Environment" id=1]
 
@@ -223,28 +222,7 @@ transform = Transform( -0.573577, 0, 0.819152, 0, 1, 0, -0.819152, 0, -0.573577,
 
 transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -11, 1.5, 14.5 )
 
-[node name="Camera" type="Camera" parent="." index="4"]
-
-transform = Transform( 1.31134e-007, 0.422618, -0.906308, 0, 0.906308, 0.422618, 1, -5.54196e-008, 1.18848e-007, 6.5, 7.5, 1.5 )
-keep_aspect = 1
-cull_mask = 1048575
-environment = null
-h_offset = 0.0
-v_offset = 0.0
-doppler_tracking = 0
-projection = 0
-current = false
-fov = 70.0
-size = 1.0
-near = 0.05
-far = 100.0
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
-follow_this_path = NodePath("../Car")
-target_distance = 10.0
-target_height = 4.0
-
-[node name="Box" parent="." index="5" instance=ExtResource( 7 )]
+[node name="Box" parent="." index="4" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5, 1, -1 )
 

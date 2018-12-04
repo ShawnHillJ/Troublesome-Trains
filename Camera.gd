@@ -35,5 +35,5 @@ func _physics_process(delta):
 	look_at(last_lookat, Vector3(0.0, 1.0, 0.0))
 	
 func set_path(_node):
-	follow_this = get_node(_node)
+	follow_this = _node
 	last_lookat = follow_this.global_transform.origin
