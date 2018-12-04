@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://TrainMovement.gd" type="Script" id=1]
 [ext_resource path="res://Train Models/Industrial.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Shawn/Joints.gd" type="Script" id=3]
+[ext_resource path="res://PowerUpManager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Shawn/Joints.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 
 radius = 1.0
 height = 2.6388
 
-[node name="KinematicBody" type="KinematicBody"]
+[node name="KinematicBody" type="KinematicBody" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 input_ray_pickable = true
@@ -29,16 +30,18 @@ script = ExtResource( 1 )
 
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+[node name="PowerUpManager" parent="." index="1" instance=ExtResource( 3 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="2"]
 
 transform = Transform( 1, 0, 0, 0, 1.134, 0, 0, 0, 0.9639, 0, 0, 0 )
 shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="Joints" type="Spatial" parent="." index="2"]
+[node name="Joints" type="Spatial" parent="." index="3"]
 
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="Joint1" type="Generic6DOFJoint" parent="Joints" index="0"]
 

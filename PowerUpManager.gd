@@ -1,4 +1,4 @@
-extends Node
+extends Spatial
 
 enum powerups {empty, oil, explosion, smokescreen}
 var powerupnumber = 3 #number of different powerups

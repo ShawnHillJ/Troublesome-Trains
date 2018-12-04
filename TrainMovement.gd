@@ -8,6 +8,9 @@ var gravity = -9.8
 var velocity = Vector3()
 var steering_angle = 0.0
 onready var camera = get_node("")
+onready var powerup_handler = get_node("Powerup_Node")
+onready var joints = get_node("Joints")
+onready var UIpath = get_node("")
 
 #Powerup Effects
 var is_sliding = false
@@ -96,3 +99,6 @@ func ramp(val, ramp_direction): #ramps the value to a specified number
 	elif ramp_direction and val > 0:
 		return 2
 	return 1
+	
+func hit_pickup():
+	powerup_handler.add_powerup()

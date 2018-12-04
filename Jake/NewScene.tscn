@@ -4,13 +4,14 @@
 [ext_resource path="res://Walls.tscn" type="PackedScene" id=2]
 [ext_resource path="res://High_Jump Map.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Camera.gd" type="Script" id=4]
-[ext_resource path="res://Car.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Car_Old.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Test_Raycaster.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Traincar_Oil.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Traincar_Explosive.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Jake/PickupHolder.gd" type="Script" id=9]
 [ext_resource path="res://Jake/Box.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Jake/Box.gd" type="Script" id=11]
+
 
 [sub_resource type="Environment" id=1]
 

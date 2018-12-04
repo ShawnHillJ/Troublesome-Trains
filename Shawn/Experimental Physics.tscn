@@ -3,8 +3,9 @@
 [ext_resource path="res://Camera.gd" type="Script" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
 [ext_resource path="res://High_Jump Map.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Shawn/PlayerTrain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PlayerTrain.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Traincar_Oil.tscn" type="PackedScene" id=5]
+
 
 [node name="Root" type="Spatial"]
 

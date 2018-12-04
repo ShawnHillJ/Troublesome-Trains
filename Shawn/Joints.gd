@@ -5,8 +5,11 @@ extends Spatial
 # var b = "textvar"
 var joints = []
 var items = 0
-var explosive_car = load()
-var oil_car = load()
+
+var explosive_car = load("res://Traincar_Explosive.tscn")
+var oil_car = load("res://Oilcar.tscn")
+var cars = [oil_car, explosive_car]
+
 onready var joint1 = get_node("Joint1")
 onready var outer_parent = get_node("../")
 
@@ -38,5 +41,5 @@ func remove_powerup():
 		pass
 	
 func _shift_joint_nodes(j1, j2):
-#	Moves the item stored in j2.b to j2.a and j2.a
+#	Moves the item stored in j2.b to j2.a and sets j2.a
 	pass
