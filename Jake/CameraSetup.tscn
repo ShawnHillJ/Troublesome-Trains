@@ -15,7 +15,7 @@ resource_local_to_scene = true
 flags = 0
 viewport_path = NodePath("UI/Viewport2")
 
-[sub_resource type="ViewportTexture" id=5]
+[sub_resource type="ViewportTexture" id=3]
 
 resource_local_to_scene = true
 flags = 0
@@ -50,7 +50,7 @@ _sections_unfolded = [ "Grow Direction", "Mouse" ]
 [node name="Viewport" type="Viewport" parent="UI" index="0"]
 
 arvr = false
-size = Vector2( 512, 300 )
+size = Vector2( 640, 720 )
 own_world = false
 world = null
 transparent_bg = false
@@ -92,13 +92,13 @@ far = 100.0
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 follow_this_path = null
-target_distance = 3.0
-target_height = 2.0
+target_distance = 12.0
+target_height = 8.0
 
 [node name="Viewport2" type="Viewport" parent="UI" index="1"]
 
 arvr = false
-size = Vector2( 512, 300 )
+size = Vector2( 640, 720 )
 own_world = false
 world = null
 transparent_bg = false
@@ -139,8 +139,8 @@ near = 0.05
 far = 100.0
 script = ExtResource( 2 )
 follow_this_path = null
-target_distance = 3.0
-target_height = 2.0
+target_distance = 12.0
+target_height = 8.0
 
 [node name="Viewport3" type="Viewport" parent="UI" index="2"]
 
@@ -238,24 +238,26 @@ target_height = 2.0
 
 [node name="Sprite" type="Sprite" parent="UI" index="4"]
 
-position = Vector2( 256, 151 )
+position = Vector2( 321.298, 360.498 )
 texture = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Sprite2" type="Sprite" parent="UI" index="5"]
 
-position = Vector2( 768, 150 )
+position = Vector2( 959.813, 360.858 )
 texture = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite3" type="Sprite" parent="UI" index="6"]
 
+visible = false
 position = Vector2( 512, 450 )
-texture = SubResource( 5 )
+texture = SubResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Sprite4" type="Sprite" parent="UI" index="7"]
 
+visible = false
 position = Vector2( 766.848, 450 )
 texture = SubResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]
