@@ -5,6 +5,9 @@ var powerupnumber = 3 #number of different powerups
 var PowerUpArray = [0,0,0,0,0,0] 
 var buffer = 0.3
 
+onready var OilSpawner = preload("res://Jonathan/OilSpawner.tscn") #change path in final product?
+
+
 func _ready():
 	randomize()
 
@@ -56,6 +59,7 @@ func UsePowerUp():
 	get_parent().UIPath.update_items_panel(PowerUpArray)
 
 func UseOil():
+	add_child(OilSpawner)
 	pass
 
 func UseExplosion():

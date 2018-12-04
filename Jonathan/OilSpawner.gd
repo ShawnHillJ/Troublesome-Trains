@@ -10,6 +10,7 @@ onready var OilBlobAsset = preload("res://Jonathan/OilBlob.tscn") #change path i
 
 
 func _process(delta):
+	global_transform.origin = get_parent().global_transform.origin
 	if oilamount > 0:
 		oilcounter -= delta
 		if (oilcounter <= 0):
