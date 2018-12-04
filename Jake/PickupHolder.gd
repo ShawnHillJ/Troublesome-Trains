@@ -22,6 +22,7 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
+
 func process_pickup(node):
 	child_to_respawn = node
 	remove_child(node)
