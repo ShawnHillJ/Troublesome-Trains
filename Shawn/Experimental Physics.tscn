@@ -13,7 +13,7 @@
 
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0, 1.39782, 0 )
 
-[node name="Generic6DOFJoint" type="Generic6DOFJoint" parent="KinematicBody" index="2"]
+[node name="Joint1" type="Generic6DOFJoint" parent="KinematicBody" index="2"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.74228e-008, -0.5, 2 )
 nodes/node_a = NodePath("..")
@@ -73,6 +73,306 @@ angular_motor_z/target_velocity = 0.0
 angular_motor_z/force_limit = 300.0
 _sections_unfolded = [ "angular_limit_z", "nodes" ]
 
+[node name="Joint2" type="Generic6DOFJoint" parent="KinematicBody" index="3"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62268e-007, -0.5, 6 )
+nodes/node_a = NodePath("../../Traincar")
+nodes/node_b = NodePath("../../Traincar2")
+solver/priority = 1
+collision/exclude_nodes = true
+linear_limit_x/enabled = true
+linear_limit_x/upper_distance = 0.0
+linear_limit_x/lower_distance = 0.0
+linear_limit_x/softness = 0.7
+linear_limit_x/restitution = 0.5
+linear_limit_x/damping = 1.0
+angular_limit_x/enabled = true
+angular_limit_x/upper_angle = 0.0
+angular_limit_x/lower_angle = 0.0
+angular_limit_x/softness = 0.5
+angular_limit_x/restitution = 0.01
+angular_limit_x/damping = 1.0
+angular_limit_x/force_limit = 0.0
+angular_limit_x/erp = 0.5
+angular_motor_x/enabled = false
+angular_motor_x/target_velocity = 0.0
+angular_motor_x/force_limit = 300.0
+linear_limit_y/enabled = true
+linear_limit_y/upper_distance = 0.0
+linear_limit_y/lower_distance = 0.0
+linear_limit_y/softness = 0.7
+linear_limit_y/restitution = 0.5
+linear_limit_y/damping = 1.0
+angular_limit_y/enabled = true
+angular_limit_y/upper_angle = 45.0
+angular_limit_y/lower_angle = -45.0
+angular_limit_y/softness = 0.3
+angular_limit_y/restitution = 0.0
+angular_limit_y/damping = 1.0
+angular_limit_y/force_limit = 0.0
+angular_limit_y/erp = 0.5
+angular_motor_y/enabled = false
+angular_motor_y/target_velocity = 0.0
+angular_motor_y/force_limit = 300.0
+linear_limit_z/enabled = true
+linear_limit_z/upper_distance = 0.0
+linear_limit_z/lower_distance = 0.0
+linear_limit_z/softness = 0.7
+linear_limit_z/restitution = 0.5
+linear_limit_z/damping = 1.0
+angular_limit_z/enabled = true
+angular_limit_z/upper_angle = 45.0
+angular_limit_z/lower_angle = -45.0
+angular_limit_z/softness = 0.5
+angular_limit_z/restitution = 0.0
+angular_limit_z/damping = 1.0
+angular_limit_z/force_limit = 0.0
+angular_limit_z/erp = 0.5
+angular_motor_z/enabled = false
+angular_motor_z/target_velocity = 0.0
+angular_motor_z/force_limit = 300.0
+_sections_unfolded = [ "nodes" ]
+
+[node name="Joint3" type="Generic6DOFJoint" parent="KinematicBody" index="4"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37114e-007, -0.5, 10 )
+nodes/node_a = NodePath("../../Traincar2")
+nodes/node_b = NodePath("../../Traincar3")
+solver/priority = 1
+collision/exclude_nodes = true
+linear_limit_x/enabled = true
+linear_limit_x/upper_distance = 0.0
+linear_limit_x/lower_distance = 0.0
+linear_limit_x/softness = 0.7
+linear_limit_x/restitution = 0.5
+linear_limit_x/damping = 1.0
+angular_limit_x/enabled = true
+angular_limit_x/upper_angle = 0.0
+angular_limit_x/lower_angle = 0.0
+angular_limit_x/softness = 0.5
+angular_limit_x/restitution = 0.01
+angular_limit_x/damping = 1.0
+angular_limit_x/force_limit = 0.0
+angular_limit_x/erp = 0.5
+angular_motor_x/enabled = false
+angular_motor_x/target_velocity = 0.0
+angular_motor_x/force_limit = 300.0
+linear_limit_y/enabled = true
+linear_limit_y/upper_distance = 0.0
+linear_limit_y/lower_distance = 0.0
+linear_limit_y/softness = 0.7
+linear_limit_y/restitution = 0.5
+linear_limit_y/damping = 1.0
+angular_limit_y/enabled = true
+angular_limit_y/upper_angle = 45.0
+angular_limit_y/lower_angle = -45.0
+angular_limit_y/softness = 0.3
+angular_limit_y/restitution = 0.01
+angular_limit_y/damping = 1.0
+angular_limit_y/force_limit = 0.0
+angular_limit_y/erp = 0.5
+angular_motor_y/enabled = false
+angular_motor_y/target_velocity = 0.0
+angular_motor_y/force_limit = 300.0
+linear_limit_z/enabled = true
+linear_limit_z/upper_distance = 0.0
+linear_limit_z/lower_distance = 0.0
+linear_limit_z/softness = 0.7
+linear_limit_z/restitution = 0.5
+linear_limit_z/damping = 1.0
+angular_limit_z/enabled = true
+angular_limit_z/upper_angle = 45.0
+angular_limit_z/lower_angle = -45.0
+angular_limit_z/softness = 0.5
+angular_limit_z/restitution = 0.0
+angular_limit_z/damping = 1.0
+angular_limit_z/force_limit = 0.0
+angular_limit_z/erp = 0.5
+angular_motor_z/enabled = false
+angular_motor_z/target_velocity = 0.0
+angular_motor_z/force_limit = 300.0
+_sections_unfolded = [ "nodes" ]
+
+[node name="Joint4" type="Generic6DOFJoint" parent="KinematicBody" index="5"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1196e-007, -0.5, 14 )
+nodes/node_a = NodePath("../../Traincar3")
+nodes/node_b = NodePath("../../Traincar4")
+solver/priority = 1
+collision/exclude_nodes = true
+linear_limit_x/enabled = true
+linear_limit_x/upper_distance = 0.0
+linear_limit_x/lower_distance = 0.0
+linear_limit_x/softness = 0.7
+linear_limit_x/restitution = 0.5
+linear_limit_x/damping = 1.0
+angular_limit_x/enabled = true
+angular_limit_x/upper_angle = 0.0
+angular_limit_x/lower_angle = 0.0
+angular_limit_x/softness = 0.5
+angular_limit_x/restitution = 0.01
+angular_limit_x/damping = 1.0
+angular_limit_x/force_limit = 0.0
+angular_limit_x/erp = 0.5
+angular_motor_x/enabled = false
+angular_motor_x/target_velocity = 0.0
+angular_motor_x/force_limit = 300.0
+linear_limit_y/enabled = true
+linear_limit_y/upper_distance = 0.0
+linear_limit_y/lower_distance = 0.0
+linear_limit_y/softness = 0.7
+linear_limit_y/restitution = 0.5
+linear_limit_y/damping = 1.0
+angular_limit_y/enabled = true
+angular_limit_y/upper_angle = 45.0
+angular_limit_y/lower_angle = -45.0
+angular_limit_y/softness = 0.3
+angular_limit_y/restitution = 0.0
+angular_limit_y/damping = 1.0
+angular_limit_y/force_limit = 0.0
+angular_limit_y/erp = 0.5
+angular_motor_y/enabled = false
+angular_motor_y/target_velocity = 0.0
+angular_motor_y/force_limit = 300.0
+linear_limit_z/enabled = true
+linear_limit_z/upper_distance = 0.0
+linear_limit_z/lower_distance = 0.0
+linear_limit_z/softness = 0.7
+linear_limit_z/restitution = 0.5
+linear_limit_z/damping = 1.0
+angular_limit_z/enabled = true
+angular_limit_z/upper_angle = 45.0
+angular_limit_z/lower_angle = -45.0
+angular_limit_z/softness = 0.5
+angular_limit_z/restitution = 0.0
+angular_limit_z/damping = 1.0
+angular_limit_z/force_limit = 0.0
+angular_limit_z/erp = 0.5
+angular_motor_z/enabled = false
+angular_motor_z/target_velocity = 0.0
+angular_motor_z/force_limit = 300.0
+_sections_unfolded = [ "nodes" ]
+
+[node name="Joint5" type="Generic6DOFJoint" parent="KinematicBody" index="6"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.86805e-007, -0.5, 18 )
+nodes/node_a = NodePath("../../Traincar4")
+nodes/node_b = NodePath("../../Traincar5")
+solver/priority = 1
+collision/exclude_nodes = true
+linear_limit_x/enabled = true
+linear_limit_x/upper_distance = 0.0
+linear_limit_x/lower_distance = 0.0
+linear_limit_x/softness = 0.7
+linear_limit_x/restitution = 0.5
+linear_limit_x/damping = 1.0
+angular_limit_x/enabled = true
+angular_limit_x/upper_angle = 0.0
+angular_limit_x/lower_angle = 0.0
+angular_limit_x/softness = 0.5
+angular_limit_x/restitution = 0.01
+angular_limit_x/damping = 1.0
+angular_limit_x/force_limit = 0.0
+angular_limit_x/erp = 0.5
+angular_motor_x/enabled = false
+angular_motor_x/target_velocity = 0.0
+angular_motor_x/force_limit = 300.0
+linear_limit_y/enabled = true
+linear_limit_y/upper_distance = 0.0
+linear_limit_y/lower_distance = 0.0
+linear_limit_y/softness = 0.7
+linear_limit_y/restitution = 0.5
+linear_limit_y/damping = 1.0
+angular_limit_y/enabled = true
+angular_limit_y/upper_angle = 45.0
+angular_limit_y/lower_angle = -45.0
+angular_limit_y/softness = 0.3
+angular_limit_y/restitution = 0.01
+angular_limit_y/damping = 1.0
+angular_limit_y/force_limit = 0.0
+angular_limit_y/erp = 0.5
+angular_motor_y/enabled = false
+angular_motor_y/target_velocity = 0.0
+angular_motor_y/force_limit = 300.0
+linear_limit_z/enabled = true
+linear_limit_z/upper_distance = 0.0
+linear_limit_z/lower_distance = 0.0
+linear_limit_z/softness = 0.7
+linear_limit_z/restitution = 0.5
+linear_limit_z/damping = 1.0
+angular_limit_z/enabled = true
+angular_limit_z/upper_angle = 45.0
+angular_limit_z/lower_angle = -45.0
+angular_limit_z/softness = 0.5
+angular_limit_z/restitution = 0.0
+angular_limit_z/damping = 1.0
+angular_limit_z/force_limit = 0.0
+angular_limit_z/erp = 0.5
+angular_motor_z/enabled = false
+angular_motor_z/target_velocity = 0.0
+angular_motor_z/force_limit = 300.0
+_sections_unfolded = [ "nodes" ]
+
+[node name="Joint6" type="Generic6DOFJoint" parent="KinematicBody" index="7"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.61651e-007, -0.5, 22 )
+nodes/node_a = NodePath("../../Traincar5")
+nodes/node_b = NodePath("../../Traincar6")
+solver/priority = 1
+collision/exclude_nodes = true
+linear_limit_x/enabled = true
+linear_limit_x/upper_distance = 0.0
+linear_limit_x/lower_distance = 0.0
+linear_limit_x/softness = 0.7
+linear_limit_x/restitution = 0.5
+linear_limit_x/damping = 1.0
+angular_limit_x/enabled = true
+angular_limit_x/upper_angle = 0.0
+angular_limit_x/lower_angle = 0.0
+angular_limit_x/softness = 0.5
+angular_limit_x/restitution = 0.01
+angular_limit_x/damping = 1.0
+angular_limit_x/force_limit = 0.0
+angular_limit_x/erp = 0.5
+angular_motor_x/enabled = false
+angular_motor_x/target_velocity = 0.0
+angular_motor_x/force_limit = 300.0
+linear_limit_y/enabled = true
+linear_limit_y/upper_distance = 0.0
+linear_limit_y/lower_distance = 0.0
+linear_limit_y/softness = 0.7
+linear_limit_y/restitution = 0.5
+linear_limit_y/damping = 1.0
+angular_limit_y/enabled = true
+angular_limit_y/upper_angle = 45.0
+angular_limit_y/lower_angle = -45.0
+angular_limit_y/softness = 0.3
+angular_limit_y/restitution = 0.0
+angular_limit_y/damping = 1.0
+angular_limit_y/force_limit = 0.0
+angular_limit_y/erp = 0.5
+angular_motor_y/enabled = false
+angular_motor_y/target_velocity = 0.0
+angular_motor_y/force_limit = 300.0
+linear_limit_z/enabled = true
+linear_limit_z/upper_distance = 0.0
+linear_limit_z/lower_distance = 0.0
+linear_limit_z/softness = 0.7
+linear_limit_z/restitution = 0.5
+linear_limit_z/damping = 1.0
+angular_limit_z/enabled = true
+angular_limit_z/upper_angle = 45.0
+angular_limit_z/lower_angle = -45.0
+angular_limit_z/softness = 0.5
+angular_limit_z/restitution = 0.0
+angular_limit_z/damping = 1.0
+angular_limit_z/force_limit = 0.0
+angular_limit_z/erp = 0.5
+angular_motor_z/enabled = false
+angular_motor_z/target_velocity = 0.0
+angular_motor_z/force_limit = 300.0
+_sections_unfolded = [ "nodes" ]
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = null
@@ -99,11 +399,31 @@ near = 0.05
 far = 100.0
 script = ExtResource( 3 )
 follow_this_path = NodePath("../KinematicBody")
-target_distance = 6.0
-target_height = 4.0
+target_distance = 12.0
+target_height = 8.0
 
 [node name="Traincar" parent="." index="4" instance=ExtResource( 4 )]
 
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -4, 0.5, 0 )
+
+[node name="Traincar2" parent="." index="5" instance=ExtResource( 4 )]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -8, 0.5, 0 )
+
+[node name="Traincar3" parent="." index="6" instance=ExtResource( 4 )]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -12, 0.5, 0 )
+
+[node name="Traincar4" parent="." index="7" instance=ExtResource( 4 )]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -16, 0.5, 0 )
+
+[node name="Traincar5" parent="." index="8" instance=ExtResource( 4 )]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -20, 0.5, 0 )
+
+[node name="Traincar6" parent="." index="9" instance=ExtResource( 4 )]
+
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -24, 0.5, 0 )
 
 

@@ -45,40 +45,34 @@ func _physics_process(delta):
 
 	var hv = velocity
 	hv.y = 0
-	if Input.is_action_pressed("Drift"):
-		var new_pos = direction * SPEED
-		var accel = DE_ACCELERATION
-		if (direction.dot(hv) > 0):
-			accel = ACCELERATION
-		if is_on_floor():
-			hv = hv.linear_interpolate(new_pos, accel * delta)
-		velocity.x = hv.x
-		velocity.z = hv.z
+	
+	var new_pos = direction * SPEED
+	if not Input.is_action_pressed("Drift"):
+		new_pos *= 0.5
 		
-	else:
-		var new_pos = direction * SPEED
-		var accel = DE_ACCELERATION
-		if (direction.dot(hv) > 0):
-			accel = ACCELERATION
-		if is_on_floor():
+	var accel = DE_ACCELERATION
+	if (direction.dot(hv) > 0):
+		accel = ACCELERATION
+	if is_on_floor():
+		if Input.is_action_pressed("Drift"):
+		    hv = hv.linear_interpolate(new_pos, accel * delta)
+		else:
 			hv = hv.linear_interpolate(new_pos, accel * 5 * delta)
-		velocity.x = hv.x
-		velocity.z = hv.z
-		
+	velocity.x = hv.x
+	velocity.z = hv.z
 	
 		
 	# Steering
-	if abs(velocity.x) > 0.1 or abs(velocity.y) > 0.1 or abs(velocity.z) > 0.1:
+	if  velocity.length() > 0.3:
 		if Input.is_action_pressed("Left"):
-			steering_angle = lerp(steering_angle, deg2rad(1), ramp(rad2deg(steering_angle), false) * 5 * delta)
+			steering_angle = lerp(steering_angle, ramp(rad2deg(steering_angle), false) * deg2rad(1), 5 * delta)
 			rotation.y += steering_angle
 		elif Input.is_action_pressed("Right"):
-			steering_angle = lerp(steering_angle, deg2rad(-1), ramp(rad2deg(steering_angle), true) * 5 * delta)
+			steering_angle = lerp(steering_angle, ramp(rad2deg(steering_angle), true) * deg2rad(-1), 5 * delta)
 			rotation.y += steering_angle
 		else:
 			steering_angle = lerp(steering_angle, 0, 10 * delta)
 			rotation.y += steering_angle
-	
 	
 #	print("steering_angle:", steering_angle)
 #	print("Is on ground", is_on_floor())
@@ -89,9 +83,7 @@ func _physics_process(delta):
 
 func ramp(val, ramp_direction): #ramps the value to a specified number
 	if not ramp_direction and val < 0:
-		return 5
+		return 2
 	elif ramp_direction and val > 0:
-		return 5
+		return 2
 	return 1
-	
-	

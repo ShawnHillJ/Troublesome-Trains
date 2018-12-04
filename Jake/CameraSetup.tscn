@@ -15,13 +15,13 @@ resource_local_to_scene = true
 flags = 0
 viewport_path = NodePath("UI/Viewport2")
 
-[sub_resource type="ViewportTexture" id=4]
+[sub_resource type="ViewportTexture" id=3]
 
 resource_local_to_scene = true
 flags = 0
 viewport_path = NodePath("UI/Viewport3")
 
-[sub_resource type="ViewportTexture" id=3]
+[sub_resource type="ViewportTexture" id=4]
 
 resource_local_to_scene = true
 flags = 0
@@ -238,30 +238,26 @@ target_height = 2.0
 
 [node name="Sprite" type="Sprite" parent="UI" index="4"]
 
-visible = false
 position = Vector2( 256, 151 )
 texture = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Sprite2" type="Sprite" parent="UI" index="5"]
 
-visible = false
 position = Vector2( 768, 150 )
 texture = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite3" type="Sprite" parent="UI" index="6"]
 
-visible = false
 position = Vector2( 512, 450 )
-texture = SubResource( 4 )
+texture = SubResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Sprite4" type="Sprite" parent="UI" index="7"]
 
-visible = false
 position = Vector2( 766.848, 450 )
-texture = SubResource( 3 )
+texture = SubResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 

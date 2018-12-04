@@ -10,9 +10,13 @@ config_version=3
 
 [application]
 
-config/name="Title Screen Start"
+config/name="Troublesome Trains"
 run/main_scene="res://title_screen/TitleScreen.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Autoload="*res://Autoload.gd"
 
 [display]
 

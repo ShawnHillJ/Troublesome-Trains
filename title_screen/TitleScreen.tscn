@@ -1,13 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://title_screen/title_screen.gd" type="Script" id=1]
 [ext_resource path="res://title_screen/TT_logo.png" type="Texture" id=2]
 [ext_resource path="res://title_screen/buttons/NewGameButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://title_screen/buttons/ContinueButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://title_screen/buttons/OptionsButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://thomasTheDankEngineNew.png" type="Texture" id=6]
-[ext_resource path="res://title_screen/fonts/montserrat_24.tres" type="DynamicFont" id=7]
-[ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=8]
+[ext_resource path="res://title_screen/buttons/OptionsButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://thomasTheDankEngineNew.png" type="Texture" id=5]
+[ext_resource path="res://title_screen/fonts/montserrat_24.tres" type="DynamicFont" id=6]
+[ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=7]
 
 [node name="TitleScreen" type="Control"]
 
@@ -94,25 +93,19 @@ size_flags_vertical = 3
 custom_constants/separation = 20
 alignment = 1
 
-[node name="NewGameButton" parent="Menu/CenterRow/Buttons" index="0" instance=ExtResource( 3 )]
+[node name="StartGame" parent="Menu/CenterRow/Buttons" index="0" instance=ExtResource( 3 )]
 
-margin_top = 18.0
+margin_top = 58.0
 margin_right = 518.0
-margin_bottom = 78.0
+margin_bottom = 118.0
 _sections_unfolded = [ "Pause", "Rect" ]
 scene_to_load = "res://Game_Scene.tscn"
 
-[node name="ContinueButton" parent="Menu/CenterRow/Buttons" index="1" instance=ExtResource( 4 )]
+[node name="OptionsButton" parent="Menu/CenterRow/Buttons" index="1" instance=ExtResource( 4 )]
 
-margin_top = 98.0
+margin_top = 138.0
 margin_right = 518.0
-margin_bottom = 158.0
-
-[node name="OptionsButton" parent="Menu/CenterRow/Buttons" index="2" instance=ExtResource( 5 )]
-
-margin_top = 178.0
-margin_right = 518.0
-margin_bottom = 238.0
+margin_bottom = 198.0
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow" index="1"]
 
@@ -147,7 +140,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 stretch_mode = 0
 
 [node name="VersionLabel" type="Label" parent="Menu" index="2"]
@@ -165,16 +158,16 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 7 )
-text = "Version 1.5
+custom_fonts/font = ExtResource( 6 )
+text = "Version 1.0
 VGDC UCI 2018
 "
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Size Flags", "custom_fonts" ]
+_sections_unfolded = [ "custom_fonts" ]
 
-[node name="FadeIn" parent="." index="1" instance=ExtResource( 8 )]
+[node name="FadeIn" parent="." index="1" instance=ExtResource( 7 )]
 
 visible = false
 
