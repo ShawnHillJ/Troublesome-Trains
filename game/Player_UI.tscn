@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player_UIl.gd" type="Script" id=1]
 [ext_resource path="res://game/gomarice_nandaka_western.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://game/Lap_Label.gd" type="Script" id=3]
 [ext_resource path="res://Place_Label.gd" type="Script" id=4]
+[ext_resource path="res://game/ItemPanel.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -20,7 +21,7 @@ use_mipmaps = true
 use_filter = false
 font_data = ExtResource( 2 )
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -119,6 +120,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 5 )
+_sections_unfolded = [ "Anchor", "Margin", "Size Flags", "Theme", "custom_styles" ]
 
 [node name="Item2" type="PanelContainer" parent="Items Panel" index="1"]
 
@@ -136,6 +139,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 5 )
 
 [node name="Item3" type="PanelContainer" parent="Items Panel" index="2"]
 
@@ -153,6 +157,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 5 )
 
 [node name="Item4" type="PanelContainer" parent="Items Panel" index="3"]
 
@@ -170,6 +175,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 5 )
 
 [node name="Item5" type="PanelContainer" parent="Items Panel" index="4"]
 
@@ -187,6 +193,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 5 )
 
 [node name="Item6" type="PanelContainer" parent="Items Panel" index="5"]
 
@@ -204,5 +211,6 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 5 )
 
 
