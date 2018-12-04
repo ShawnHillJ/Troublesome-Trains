@@ -67,7 +67,7 @@ _sections_unfolded = [ "Albedo" ]
 radius = 1.0
 height = 1.0
 
-[node name="OilSpawnerUHJK" type="KinematicBody"]
+[node name="OilSpawnerUHJK" type="KinematicBody" index="0"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
 visible = false
