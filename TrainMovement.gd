@@ -9,6 +9,10 @@ var velocity = Vector3()
 var steering_angle = 0.0
 onready var camera = get_node("")
 
+#Powerup Effects
+var is_sliding = false
+
+
 const SPEED = 40
 const ACCELERATION = 0.5
 const DE_ACCELERATION = 2
@@ -24,6 +28,8 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
+func apply_explosion(vec):
+	velocity = velocity + vec
 
 func _physics_process(delta):
 	
@@ -47,7 +53,7 @@ func _physics_process(delta):
 	hv.y = 0
 	
 	var new_pos = direction * SPEED
-	if not Input.is_action_pressed("Drift"):
+	if not Input.is_action_pressed("Drift") or not is_sliding:
 		new_pos *= 0.5
 		
 	var accel = DE_ACCELERATION
@@ -77,6 +83,9 @@ func _physics_process(delta):
 #	print("steering_angle:", steering_angle)
 #	print("Is on ground", is_on_floor())
 #	print("velocity", velocity)
+
+#	Powerup effects to train dynamics
+#	if oil
 	
 	set_rotation(rotation)
 	move_and_slide(velocity, Vector3(0,1,0), 0.05, 4, deg2rad(50))

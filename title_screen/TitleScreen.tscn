@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://title_screen/title_screen.gd" type="Script" id=1]
 [ext_resource path="res://title_screen/TT_logo.png" type="Texture" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://thomasTheDankEngineNew.png" type="Texture" id=5]
 [ext_resource path="res://title_screen/fonts/montserrat_24.tres" type="DynamicFont" id=6]
 [ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Audio/Edited/Mouseover.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Audio/Edited/Choo-Choo.wav" type="AudioStream" id=9]
+[ext_resource path="res://Audio/Edited/Ding 1 - adbicycle.wav" type="AudioStream" id=10]
 
 [node name="TitleScreen" type="Control"]
 
@@ -170,6 +173,57 @@ _sections_unfolded = [ "custom_fonts" ]
 [node name="FadeIn" parent="." index="1" instance=ExtResource( 7 )]
 
 visible = false
+
+[node name="Sound Control" type="Control" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Hint" ]
+
+[node name="Mouseover" type="AudioStreamPlayer" parent="Sound Control" index="0"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Background Music" type="AudioStreamPlayer" parent="Sound Control" index="1"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="Click" type="AudioStreamPlayer" parent="Sound Control" index="2"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="mouse_entered" from="Menu/CenterRow/Buttons/StartGame" to="Menu/CenterRow/Buttons/StartGame" method="_on_StartGame_mouse_entered"]
+
+[connection signal="pressed" from="Menu/CenterRow/Buttons/StartGame" to="Menu/CenterRow/Buttons/StartGame" method="_on_StartGame_pressed"]
+
+[connection signal="mouse_entered" from="Menu/CenterRow/Buttons/OptionsButton" to="Menu/CenterRow/Buttons/OptionsButton" method="_on_OptionsButton_mouse_entered"]
+
+[connection signal="pressed" from="Menu/CenterRow/Buttons/OptionsButton" to="Menu/CenterRow/Buttons/OptionsButton" method="_on_OptionsButton_pressed"]
 
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 

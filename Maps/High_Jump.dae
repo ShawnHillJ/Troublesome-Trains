@@ -5,8 +5,8 @@
 		<author>Anonymous</author>
 		<authoring_tool>Collada Exporter for Blender 2.6+, by Juan Linietsky (juan@codenix.com)</authoring_tool>
 	</contributor>
-	<created>2018-11-06T15:37:50Z</created>
-	<modified>2018-11-06T15:37:50Z</modified>
+	<created>2018-12-03T23:31:42Z</created>
+	<modified>2018-12-03T23:31:42Z</modified>
 	<unit meter="1.0" name="meter"/>
 	<up_axis>Z_UP</up_axis>
 </asset>
@@ -22,7 +22,7 @@
 						<color>  0.0 0.0 0.0 1.0 </color>
 					</ambient>
 					<diffuse>
-						<color>  0.0 0.004252833563876651 0.640000066757203 1.0 </color>
+						<color>  0.029927790610906335 0.002200861307991464 0.0034876615328738314 1.0 </color>
 					</diffuse>
 					<specular>
 						<color>  0.5 0.5 0.5 1.0 </color>
@@ -58,7 +58,7 @@
 						<color>  0.0 0.0 0.0 1.0 </color>
 					</ambient>
 					<diffuse>
-						<color>  0.0019370770370524676 0.640000066757203 0.0 1.0 </color>
+						<color>  0.05598224484894043 0.05598224484894043 0.05598224484894043 1.0 </color>
 					</diffuse>
 					<specular>
 						<color>  0.5 0.5 0.5 1.0 </color>

@@ -15,7 +15,7 @@ resource_local_to_scene = true
 flags = 0
 viewport_path = NodePath("UI/Viewport2")
 
-[sub_resource type="ViewportTexture" id=3]
+[sub_resource type="ViewportTexture" id=5]
 
 resource_local_to_scene = true
 flags = 0
@@ -76,7 +76,7 @@ _sections_unfolded = [ "Render Target" ]
 
 [node name="Camera" type="Camera" parent="UI/Viewport" index="0"]
 
-transform = Transform( 0.426032, -0.0786932, 0.901279, 0.0315615, 0.996896, 0.0721228, -0.904158, -0.00228077, 0.427193, 24.4645, 15.9123, -0.9554 )
+transform = Transform( 0.999494, -0.0311901, -0.00627143, 0.0315615, 0.996896, 0.0721228, 0.0040025, -0.0722842, 0.997376, 24.4645, 15.9123, -0.9554 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -124,7 +124,7 @@ _sections_unfolded = [ "Render Target" ]
 
 [node name="Camera2" type="Camera" parent="UI/Viewport2" index="0"]
 
-transform = Transform( -0.986867, -0.0163032, 0.16071, 0.0764997, 0.829085, 0.553865, -0.142272, 0.558886, -0.816949, 19.0673, 12.6002, 0 )
+transform = Transform( 0.99658, -0.0809941, -0.0164066, 0.0764997, 0.829085, 0.553865, -0.0312572, -0.553226, 0.832445, 19.0673, 12.6002, 0 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -251,7 +251,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sprite3" type="Sprite" parent="UI" index="6"]
 
 position = Vector2( 512, 450 )
-texture = SubResource( 3 )
+texture = SubResource( 5 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Sprite4" type="Sprite" parent="UI" index="7"]

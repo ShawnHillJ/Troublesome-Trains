@@ -16,3 +16,4 @@ func set_vol(vol):
 	
 func set_player_count(count):
 	player_count = count
+	print("Count Changed!")

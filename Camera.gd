@@ -8,7 +8,7 @@ var follow_this = null
 var last_lookat
 
 func _ready():
-	if follow_this_path != null:
+	if follow_this_path != null and get_node(follow_this_path) != null:
 		follow_this = get_node(follow_this_path)
 		last_lookat = follow_this.global_transform.origin
 
@@ -36,3 +36,4 @@ func _physics_process(delta):
 	
 func set_path(_node):
 	follow_this = get_node(_node)
+	last_lookat = follow_this.global_transform.origin

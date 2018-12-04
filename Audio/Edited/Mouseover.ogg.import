@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Mouseover.ogg-625762e856114ff09373b39992b0a21d.oggstr"
+
+[deps]
+
+source_file="res://Audio/Edited/Mouseover.ogg"
+dest_files=[ "res://.import/Mouseover.ogg-625762e856114ff09373b39992b0a21d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
