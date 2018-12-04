@@ -1,4 +1,4 @@
-extends PanelContainer
+extends CenterContainer
 
 enum powerups {empty, oil, explosion, smokescreen}
 
@@ -8,16 +8,16 @@ func _ready():
 func update_image(number):
 	#NO SWITCH STATEMENTS IN GODOT?!
 	if number == powerups.empty:
-		#update image to empty
+		$TextureRect.texture = get_parent().TextureEmpty
 		pass
 	elif number == powerups.oil:
-		#update image to oil
+		$TextureRect.texture = get_parent().TextureOil
 		pass
 	elif number == powerups.explosion:
-		#update image to oil
+		$TextureRect.texture = get_parent().TextureExplosion
 		pass
 	elif number == powerups.smokescreen:
-		#update image to oil
+		$TextureRect.texture = get_parent().TextureSmokescreen
 		pass
 	else:
 		pass

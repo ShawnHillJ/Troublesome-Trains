@@ -15,17 +15,17 @@ func _process(delta):
 		if Input.is_key_pressed(KEY_Q):
 			AddPowerUp()				#add random powerup to array, just like collecting powerup in-game
 			print(PowerUpArray)
-		if Input.is_key_pressed(KEY_1):
+		elif Input.is_key_pressed(KEY_1):
 			AddPowerUpSpecial(powerups.oil)
 			print(PowerUpArray)
-		if Input.is_key_pressed(KEY_2):
+		elif Input.is_key_pressed(KEY_2):
 			AddPowerUpSpecial(powerups.explosion)
 			print(PowerUpArray)
-		if Input.is_key_pressed(KEY_3):
+		elif Input.is_key_pressed(KEY_3):
 			AddPowerUpSpecial(powerups.smokescreen)
 			print(PowerUpArray)
 			
-		if Input.is_key_pressed(KEY_SPACE):
+		elif Input.is_key_pressed(KEY_SPACE):
 			UsePowerUp()
 			print(PowerUpArray)
 		buffer = 0.3
@@ -36,11 +36,13 @@ func AddPowerUp():
 	var pos = PowerUpArray.find(0)
 	if pos != -1:
 		PowerUpArray[pos] = randi()%powerupnumber+1
+		get_parent().UIPath.update_items_panel(PowerUpArray)
 
 func AddPowerUpSpecial(specific):
 	var pos = PowerUpArray.find(0)
 	if pos != -1:
 		PowerUpArray[pos] = specific
+		get_parent().UIPath.update_items_panel(PowerUpArray)
 
 func UsePowerUp():
 	if PowerUpArray[0] == powerups.oil:
@@ -51,6 +53,7 @@ func UsePowerUp():
 		UseSmokescreen()
 	PowerUpArray.append(powerups.empty)
 	PowerUpArray.pop_front()
+	get_parent().UIPath.update_items_panel(PowerUpArray)
 
 func UseOil():
 	pass
