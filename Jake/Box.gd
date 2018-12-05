@@ -15,5 +15,8 @@ func _ready():
 #	pass
 
 func _on_Box_body_entered(body):
-	if body is VehicleBody:
+	print(body.name)
+	if body is KinematicBody:# && body.name.begins_with("Player") == true:
+		print(body.name)
+		#body.PowerUpManager.AddPowerUp()
 		get_parent().process_pickup(self)

@@ -8,19 +8,19 @@ var child_to_respawn = null
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
+	transform.basis = transform.basis.rotated(Vector3 (1,0,0), PI/4)
+	transform.basis = transform.basis.rotated(Vector3 (0,0,1), PI/4)
 	
 	timer = Timer.new()
 	timer.set_one_shot(true)
 	timer.set_wait_time(RESPAWN_DELAY)
 	timer.connect("timeout", self, "_respawn_object")
 	add_child(timer)
-	
 	pass
+	
+func _process(delta):
+	transform.basis = transform.basis.rotated(Vector3 (0,0,1), PI/12)
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
 
 func process_pickup(node):
 	child_to_respawn = node
@@ -30,3 +30,6 @@ func process_pickup(node):
 func _respawn_object():
 	add_child(child_to_respawn)
 	child_to_respawn = null
+
+func _on_Box_body_entered(body):
+	pass # replace with function body

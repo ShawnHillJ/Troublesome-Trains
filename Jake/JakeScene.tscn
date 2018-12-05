@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Walls.tscn" type="PackedScene" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Jake/PickupHolder.gd" type="Script" id=5]
 [ext_resource path="res://Jake/Box.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Jake/Box.gd" type="Script" id=7]
-
+[ext_resource path="res://PlayerTrain.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ViewportTexture" id=1]
 
@@ -30,8 +30,6 @@ viewport_path = NodePath("Viewport3")
 [node name="Spatial" type="Spatial"]
 
 [node name="Map Colliders" type="Spatial" parent="." index="0"]
-
-editor/display_folded = true
 
 [node name="Floor" parent="Map Colliders" index="0" instance=ExtResource( 1 )]
 
@@ -349,6 +347,10 @@ fov = 70.0
 size = 1.0
 near = 0.05
 far = 100.0
+
+[node name="KinematicBody" parent="." index="10" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93225, 24.5848 )
 
 [connection signal="body_entered" from="Spatial/Box" to="Spatial/Box" method="_on_Box_body_entered"]
 
