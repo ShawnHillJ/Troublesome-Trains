@@ -19,9 +19,9 @@ func _process(delta):
 		queue_free()
 		#print("OIL DESPAWNED")
 
-	
-##DEBUG CHECK FOR TRAIN
-#func _on_OilSlick_body_entered(body):
-#	if body is VehicleWheel:
-#		print("HONK")
-	
+func _on_Area_body_entered(body):
+	print(body.name)
+	if body is KinematicBody && body.name.begins_with("Player") == true:
+		body.get_child(3).apply_oil()
+#
+#
