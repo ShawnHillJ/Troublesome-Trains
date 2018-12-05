@@ -21,6 +21,12 @@ func _ready():
 		new_car.global_transform.origin = Vector3(25, 2, -8 + (16*x))
 		new_car.set_rotation(Vector3 (0, deg2rad(-90), 0))
 		new_car.set_player_num(x+1)
+		var UIpath = null
+		if x == 0:
+		    UIpath = get_node("CameraSetup/UI/Viewport1/Control")
+		elif x == 1:
+			UIpath = get_node("CameraSetup/UI/Viewport2/Control")
+		new_car.set_UIpath(UIpath)
 		cars.append(get_node("Player" + String(x + 1)))
 	camera_setup.setup_cameras(cars)
 

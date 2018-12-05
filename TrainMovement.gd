@@ -12,7 +12,7 @@ var steering_angle = 0.0
 onready var camera = get_node("")
 onready var powerup_handler = get_node("Powerup_Node")
 onready var joints = get_node("Joints")
-onready var UIpath = get_node("")
+onready var UIPath = null
 onready var powerup_manager = get_node("PowerUpManager")
 var player_num = 2
 
@@ -42,9 +42,15 @@ func _process(delta):
 
 func control_handler(action):
 	if player_num == 1:
-		return Input.is_action_pressed(action)
+		if action.begins_with("Powerup"):
+			return Input.is_action_just_pressed(action)
+		else:
+			return Input.is_action_pressed(action)
 	else:
-		return Input.is_action_pressed(action + String(player_num))
+		if action.begins_with("Powerup"):
+			return Input.is_action_just_pressed(action + String(player_num))
+		else:
+			return Input.is_action_pressed(action + String(player_num))
 
 
 func apply_explosion(vec):
@@ -125,3 +131,6 @@ func hit_pickup():
 	
 func set_player_num(num):
 	player_num = num
+	
+func set_UIpath(node):
+	UIPath = node

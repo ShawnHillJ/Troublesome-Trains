@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Jake/CameraSetupScript.gd" type="Script" id=1]
 [ext_resource path="res://Camera.gd" type="Script" id=2]
+[ext_resource path="res://game/Player_UI.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ViewportTexture" id=1]
 
@@ -95,6 +96,8 @@ follow_this_path = null
 target_distance = 12.0
 target_height = 8.0
 
+[node name="Control" parent="UI/Viewport" index="1" instance=ExtResource( 3 )]
+
 [node name="Viewport2" type="Viewport" parent="UI" index="1"]
 
 arvr = false
@@ -141,6 +144,8 @@ script = ExtResource( 2 )
 follow_this_path = null
 target_distance = 12.0
 target_height = 8.0
+
+[node name="Control" parent="UI/Viewport2" index="1" instance=ExtResource( 3 )]
 
 [node name="Viewport3" type="Viewport" parent="UI" index="2"]
 
