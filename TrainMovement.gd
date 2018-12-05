@@ -4,6 +4,8 @@ extends KinematicBody
 # var a = 2
 # var b = "textvar"
 
+onready var animator = get_node("Mesh/AnimationPlayer")
+
 var gravity = -9.8
 var velocity = Vector3()
 var steering_angle = 0.0
@@ -28,10 +30,16 @@ func _ready():
 	#direction = get_node("").get_global_transform().basis
 	pass
 
-#func _process(delta):
+func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+	if not animator.is_playing():
+		animator.play("default")
+	animator.playback_speed = velocity.length() / 10
+
+
+
 func control_handler(action):
 	if player_num == 1:
 		return Input.is_action_pressed(action)

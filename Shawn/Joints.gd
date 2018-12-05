@@ -29,22 +29,39 @@ func add_powerup(type):
 	var newname = "powerup" + String(items)
 	new_car_instance.set_name(newname)
 	add_child_below_node(new_car_instance, outer_parent)
-	var new_car_path = get_node("../../../" + newname)
+	powerups.append(new_car_instance)
+#	var new_car = get_node("../../../" + newname)
 	
 	if current_joint == joint1:
-		current_joint.set_node_a()
+		current_joint.set_node_b(new_car_instance.get_path())
 		return
 		
-		
+	else:
+		var new_joint = joint1.instance()
+		add_child(new_joint)
+		joints.append(new_joint)
+		new_joint.set_node_a(joints[-2].get_path())
+		new_joint.set_node_b(null)
 		
 	
 	
-	current_joint.nodes.node_b = new_car_path
+#	current_joint.nodes.node_b = new_car_path
 	
 
 func remove_powerup():
-	for joint in joints:
-		pass
+	if items == 0:
+		return
+	
+	elif items > 2:
+		powerups[-1].queue_free()
+		joints[-1].queue_free()
+		powerups[-1].remove(-1)
+		joints[-1].remove(-1)
+		joints[-1].set_node_b(null)
+	
+	else:
+		joint1.remove
+	
 	
 func _shift_joint_nodes(j1, j2):
 #	Moves the item stored in j2.b to j2.a and sets j2.a

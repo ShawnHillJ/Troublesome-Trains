@@ -85,7 +85,7 @@ adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 
-[node name="Spatial" type="Spatial" index="0"]
+[node name="Spatial" type="Spatial"]
 
 script = ExtResource( 1 )
 
@@ -124,7 +124,7 @@ directional_shadow_max_distance = 200.0
 
 [node name="CameraSetup" parent="." index="2" instance=ExtResource( 3 )]
 
-transform = Transform( -4.37114e-008, -0.422618, 0.906308, 0, 0.906308, 0.422618, -1, 1.84732e-008, -3.9616e-008, 26.5, 7.5, 1.5 )
+transform = Transform( -4.37114e-008, -0.422618, 0.906308, 0, 0.906308, 0.422618, -1, 1.84732e-008, -3.9616e-008, 14, 7.5, 1.5 )
 
 [node name="Map Colliders" type="Spatial" parent="." index="3"]
 
