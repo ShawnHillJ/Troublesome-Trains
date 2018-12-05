@@ -16,8 +16,9 @@ func _ready():
 	for x in range(2):
 		var new_car = car.instance()
 		new_car.set_name("Player" + String(x + 1))
+		print(new_car.name)
 		self.add_child(new_car)
-		new_car.global_transform.origin = Vector3(1, 2, 3 + (2*x))
+		new_car.global_transform.origin = Vector3(25, 2, -8 + (16*x))
 		new_car.set_rotation(Vector3 (0, deg2rad(-90), 0))
 		new_car.set_player_num(x+1)
 		cars.append(get_node("Player" + String(x + 1)))
