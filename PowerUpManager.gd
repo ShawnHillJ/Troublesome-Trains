@@ -11,28 +11,28 @@ onready var OilSpawner = preload("res://Jonathan/OilSpawner.tscn") #change path 
 func _ready():
 	randomize()
 
-func _process(delta):
+#func _process(delta):
 	#DEBUG INPUTS
-	
-	if buffer <= 0:
-		if Input.is_key_pressed(KEY_Q):
-			AddPowerUp()				#add random powerup to array, just like collecting powerup in-game
-			print(PowerUpArray)
-		elif Input.is_key_pressed(KEY_1):
-			AddPowerUpSpecial(powerups.oil)
-			print(PowerUpArray)
-		elif Input.is_key_pressed(KEY_2):
-			AddPowerUpSpecial(powerups.explosion)
-			print(PowerUpArray)
-		elif Input.is_key_pressed(KEY_3):
-			AddPowerUpSpecial(powerups.smokescreen)
-			print(PowerUpArray)
-			
-		elif Input.is_key_pressed(KEY_SPACE):
-			UsePowerUp()
-			print(PowerUpArray)
-		buffer = 0.3
-	buffer -= delta
+
+#	if buffer <= 0:
+#		if Input.is_key_pressed(KEY_Q):
+#			AddPowerUp()				#add random powerup to array, just like collecting powerup in-game
+#			print(PowerUpArray)
+#		elif Input.is_key_pressed(KEY_1):
+#			AddPowerUpSpecial(powerups.oil)
+#			print(PowerUpArray)
+#		elif Input.is_key_pressed(KEY_2):
+#			AddPowerUpSpecial(powerups.explosion)
+#			print(PowerUpArray)
+#		elif Input.is_key_pressed(KEY_3):
+#			AddPowerUpSpecial(powerups.smokescreen)
+#			print(PowerUpArray)
+#
+#		elif Input.is_key_pressed(KEY_SPACE):
+#			UsePowerUp()
+#			print(PowerUpArray)
+#		buffer = 0.3
+#	buffer -= delta
 
 
 func AddPowerUp():

@@ -20,7 +20,7 @@ func _process(delta):
 		#print("OIL DESPAWNED")
 
 func _on_Area_body_entered(body):
-	print(body.name)
+#	print(body.name)
 	if body is KinematicBody && body.name.begins_with("Player") == true:
 		body.get_child(3).apply_oil()
 #
