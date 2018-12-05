@@ -40,12 +40,14 @@ func AddPowerUp():
 	if pos != -1:
 		PowerUpArray[pos] = randi()%powerupnumber+1
 		get_parent().UIPath.update_items_panel(PowerUpArray)
+		get_parent().get_child(3).add_powerup(0)
 
 func AddPowerUpSpecial(specific):
 	var pos = PowerUpArray.find(0)
 	if pos != -1:
 		PowerUpArray[pos] = specific
 		get_parent().UIPath.update_items_panel(PowerUpArray)
+		get_parent().get_child(3).add_powerup(0)
 
 func UsePowerUp():
 	if PowerUpArray[0] == powerups.oil:
@@ -59,7 +61,8 @@ func UsePowerUp():
 	get_parent().UIPath.update_items_panel(PowerUpArray)
 
 func UseOil():
-	add_child(OilSpawner)
+	var OilSpawnerInstance = OilSpawner.instance()
+	add_child(OilSpawnerInstance)
 	pass
 
 func UseExplosion():
