@@ -30,3 +30,6 @@ func process_pickup(node):
 func _respawn_object():
 	add_child(child_to_respawn)
 	child_to_respawn = null
+
+func _on_Box_body_entered(body):
+	pass # replace with function body

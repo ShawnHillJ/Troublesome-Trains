@@ -75,7 +75,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 RESPAWN_DELAY = 5
 
-[node name="Area" type="Area" parent="." index="0"]
+[node name="Box" type="Area" parent="." index="0"]
 
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -100,7 +100,7 @@ reverb_bus_uniformity = 0.0
 script = ExtResource( 2 )
 _sections_unfolded = [ "Collision" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="Area" index="0"]
+[node name="MeshInstance" type="MeshInstance" parent="Box" index="0"]
 
 layers = 1
 material_override = null
@@ -115,9 +115,11 @@ mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="Area" index="1"]
+[node name="CollisionShape" type="CollisionShape" parent="Box" index="1"]
 
 shape = SubResource( 3 )
 disabled = false
+
+[connection signal="body_entered" from="Box" to="Box" method="_on_Box_body_entered"]
 
 
