@@ -30,8 +30,6 @@ viewport_path = NodePath("Viewport3")
 
 [node name="Map Colliders" type="Spatial" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Floor" parent="Map Colliders" index="0" instance=ExtResource( 1 )]
 
 transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0 )

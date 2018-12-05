@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game_Scene.gd" type="Script" id=1]
 [ext_resource path="res://High_Jump Map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Jake/CameraSetup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Walls.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Jake/Box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Camera.gd" type="Script" id=6]
+[ext_resource path="res://Jake/Box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://PowerUpBox.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Environment" id=1]
 
@@ -85,7 +87,7 @@ adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
@@ -222,8 +224,95 @@ transform = Transform( -0.573577, 0, 0.819152, 0, 1, 0, -0.819152, 0, -0.573577,
 
 transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -11, 1.5, 14.5 )
 
-[node name="Box" parent="." index="4" instance=ExtResource( 6 )]
+[node name="Camera" type="Camera" parent="." index="4"]
+
+transform = Transform( 1.31134e-007, 0.422618, -0.906308, 0, 0.906308, 0.422618, 1, -5.54196e-008, 1.18848e-007, 6.5, 7.5, 1.5 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+follow_this_path = NodePath("../Car")
+target_distance = 10.0
+target_height = 4.0
+
+[node name="Box" parent="." index="5" instance=ExtResource( 7 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5, 1, -1 )
+visible = false
+
+[node name="PowerUps" type="Spatial" parent="." index="6"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.5651, 2.09004, -21.2493 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerUpBox5" parent="PowerUps" index="0" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="PowerUpBox1" parent="PowerUps" index="1" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 37.3591 )
+
+[node name="PowerUpBox2" parent="PowerUps" index="2" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 43.9686 )
+
+[node name="PowerUpBox3" parent="PowerUps" index="3" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.09667 )
+
+[node name="PowerUpBox4" parent="PowerUps" index="4" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.4821, 0, 15.3646 )
+
+[node name="PowerUpBox6" parent="PowerUps" index="5" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.4821, 0, 28.188 )
+
+[node name="PowerUpBox7" parent="PowerUps" index="6" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.4821, 0, 21.8674 )
+
+[node name="PowerUpBox8" parent="PowerUps" index="7" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -148.877, 0, -3.72925 )
+
+[node name="PowerUpBox9" parent="PowerUps" index="8" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -133.568, 0, -3.72502 )
+
+[node name="PowerUpBox10" parent="PowerUps" index="9" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -140.861, 0, -3.72502 )
+
+[node name="PowerUpBox11" parent="PowerUps" index="10" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -98.6553, 0, -46.2842 )
+
+[node name="PowerUpBox12" parent="PowerUps" index="11" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -98.6553, 0, -36.9923 )
+
+[node name="PowerUpBox13" parent="PowerUps" index="12" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4493, 20.4592, -37.8519 )
+
+[node name="PowerUpBox14" parent="PowerUps" index="13" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4493, 20.4592, -51.5299 )
+
+[node name="PowerUpBox15" parent="PowerUps" index="14" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4493, 20.4592, -44.5364 )
 
 
